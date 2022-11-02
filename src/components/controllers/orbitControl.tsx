@@ -1,5 +1,5 @@
-import { useFrame, useThree } from "@react-three/fiber";
-import { useEffect, useState } from "react"
+import { useThree } from "@react-three/fiber";
+import { useEffect } from "react"
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
 export const OrbitControl = () => {
@@ -18,7 +18,6 @@ export const OrbitControl = () => {
         },
         [camera, gl]
     );
-    return null;
 
     return null;
 };
