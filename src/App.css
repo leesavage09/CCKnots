@@ -1,9 +1,22 @@
-html, body, #root {
-  height: 100%;
-  margin: 0;
+html,
+body {
+
+}
+
+#root {
+  margin: auto;
+  max-width: 600px;
 }
 
 .full-height {
-  height: 100%;
+  margin: auto;
+  height: 80vh;
+  /* width: 100vw; */
+  display: flex;
+  flex-direction: column;
   background: white;
+}
+
+.input{
+  height:100px;
 }
