@@ -25,7 +25,7 @@ export const Knot: React.FC<KnotProps> = ({ min, max, animationFrame, curve, mes
         const newPosition = min + animationFrame * diff
         const newShift = 0 - flow.uniforms.pathOffset.value + newPosition
         flow.moveAlongCurve(newShift)
-    }, [animationFrame])
+    }, [flow, animationFrame])
 
     useEffect(() => {
         const flow = new Flow(ropeMesh);
