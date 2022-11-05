@@ -2,11 +2,12 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import { hot } from "react-hot-loader";
 import { Canvas } from '@react-three/fiber'
-import { OrbitControl } from "./components/orbitControl";
 import { Bowline } from "./components/rope/knots/bowline";
 import { Sky } from "./components/sky";
 import { Curve } from "./components/curve";
-import { BowlineCurve_0, BowlineCurve_1, BowlineCurve_2 } from "./components/rope/knots/bowlineCurves";
+import { SheetBend } from "./components/rope/knots/sheetBend";
+import { curves_0, curves_1 } from "./components/rope/knots/sheetBendCurves";
+import { ArcballControl } from "./components/arcballControls";
 
 const App: React.FC = () => {
   const [animationSlider, setAnimationSlider] = useState("1000")
@@ -24,14 +25,13 @@ const App: React.FC = () => {
         camera={{ fov: 45, position: [0, 0, 50] }}
       >
         <Sky />
-        <OrbitControl />
+        <ArcballControl />
         <ambientLight intensity={0.3} />
         <pointLight castShadow position={[10, 10, 10]} intensity={0.7} />
-        <Bowline frame={animation} />
+        <SheetBend frame={animation} />
 
-        <Curve curve={BowlineCurve_0} color={'red'}/>
-        <Curve curve={BowlineCurve_1} color={'green'}/>
-        <Curve curve={BowlineCurve_2} color={'blue'}/>
+        <Curve curve={curves_0} color={'red'} />
+        <Curve curve={curves_1} color={'blue'} />
       </Canvas>
       <input
         className="input"
