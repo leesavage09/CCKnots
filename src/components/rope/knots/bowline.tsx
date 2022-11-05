@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { animate, Animation } from '../../support'
-import { BowlineCurve_0, BowlineCurve_1 } from './bowlineCurves'
+import { BowlineCurve_1, BowlineCurve_2, BowlineCurve_0 } from './bowlineCurves'
 import { Knot } from '../knot'
 
 interface AnimatedKnotProps {
@@ -19,9 +19,13 @@ export const Bowline: React.FC<AnimatedKnotProps> = ({ frame }) => {
         action: setMoveFrame,
         values: [0, 0.260]
     }, {
-        frames: [0.200, 0.700],
+        frames: [0.200, 0.600],
         action: setBendFrame,
-        values: [1, 0]
+        values: [0, 0.5]
+    },{
+        frames: [0.600, 0.700],
+        action: setBendFrame,
+        values: [0.5, 1]
     }, {
         frames: [0.600, 1],
         action: setMoveFrame,
@@ -39,7 +43,7 @@ export const Bowline: React.FC<AnimatedKnotProps> = ({ frame }) => {
             moveFrame={moveFrame}
 
             bendFrame={bendFrame}
-            curves={[BowlineCurve_0, BowlineCurve_1]}
+            curves={[BowlineCurve_0, BowlineCurve_1, BowlineCurve_2]}
 
             debugOutline={false}
         />
