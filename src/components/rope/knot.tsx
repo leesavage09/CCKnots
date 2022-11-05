@@ -29,11 +29,14 @@ export const Knot: React.FC<KnotProps> = ({ moveMin, moveMax, moveFrame, bendFra
     const bend = () => {
         if (!flow) return
 
-        const keyFrames = curves.length
-        const TweenSets = keyFrames - 1
-        const TweenSet = Math.floor(bendFrame * TweenSets);
-        const totalFrames = bendFrame*TweenSets
-        const frame = totalFrames-TweenSet
+        const TweenSets = curves.length - 1
+        const breakpoints = 1/TweenSets
+        const TweenSet = Math.min(Math.floor(bendFrame/breakpoints),TweenSets-1)
+
+        const totalFrames = bendFrame * TweenSets
+        const frame = totalFrames - TweenSet
+
+        console.log({ frame }, {TweenSet})
         flow.updateCurve(0, tweenCurves(curves[TweenSet], curves[TweenSet + 1], frame));
     }
 

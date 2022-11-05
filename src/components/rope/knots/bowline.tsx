@@ -15,17 +15,25 @@ export const Bowline: React.FC<AnimatedKnotProps> = ({ frame }) => {
     const moveMax = 0.163
 
     const animation: Animation = [{
-        frames: [0, 0.300],
-        action: setMoveFrame,
-        values: [0, 0.260]
+        frames: [0, 0.200],
+        action: setBendFrame,
+        values: [0, 0]
     }, {
         frames: [0.200, 0.600],
         action: setBendFrame,
         values: [0, 0.5]
-    },{
+    }, {
         frames: [0.600, 0.700],
         action: setBendFrame,
         values: [0.5, 1]
+    }, {
+        frames: [0.700, 1],
+        action: setBendFrame,
+        values: [1, 1]
+    }, {
+        frames: [0, 0.300],
+        action: setMoveFrame,
+        values: [0, 0.260]
     }, {
         frames: [0.600, 1],
         action: setMoveFrame,
