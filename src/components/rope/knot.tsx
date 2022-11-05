@@ -14,14 +14,16 @@ export type Animation = Array<{
 
 interface KnotProps {
     frame: number
+    color: string
+    length: number
     moveMin: number
     moveMax: number
     moveAnimation: Animation
-    curveAnimation: Animation
+    curveAnimation?: Animation
     curveKeyframes: Array<CurvePath<Vector3>>
 }
 
-export const Knot: React.FC<KnotProps> = ({ frame, moveMin, moveMax, moveAnimation, curveAnimation, curveKeyframes }) => {
+export const Knot: React.FC<KnotProps> = ({ frame, length, color, moveMin, moveMax, moveAnimation, curveAnimation, curveKeyframes }) => {
     const [moveFrame, setMoveFrame] = useState(0)
     const [curveFrame, setCurveFrame] = useState(0)
 
@@ -32,7 +34,8 @@ export const Knot: React.FC<KnotProps> = ({ frame, moveMin, moveMax, moveAnimati
             }
         })
 
-        curveAnimation.forEach((animation) => {
+        if (!curveAnimation) setCurveFrame(0)
+        else curveAnimation.forEach((animation) => {
             if (inRange(frame, animation.frames)) {
                 setCurveFrame(convertRange(frame, animation.frames, animation.values))
             }
@@ -44,10 +47,12 @@ export const Knot: React.FC<KnotProps> = ({ frame, moveMin, moveMax, moveAnimati
             move={{
                 min: moveMin,
                 max: moveMax,
+                length,
                 frame: moveFrame
             }}
 
             curve={{
+                color,
                 frame: curveFrame,
                 keyframes: curveKeyframes,
             }}
