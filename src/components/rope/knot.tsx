@@ -10,7 +10,7 @@ export interface KnotProps extends MeshProps {
     moveMax: number
     moveFrame: number
     bendFrame: number
-    curves: [CurvePath<Vector3>, CurvePath<Vector3>]
+    curves: Array<CurvePath<Vector3>>
     debugOutline: boolean
 }
 
@@ -28,7 +28,13 @@ export const Knot: React.FC<KnotProps> = ({ moveMin, moveMax, moveFrame, bendFra
 
     const bend = () => {
         if (!flow) return
-        flow.updateCurve(0, tweenCurves(curves[0], curves[1], bendFrame));
+
+        const keyFrames = curves.length
+        const TweenSets = keyFrames - 1
+        const TweenSet = Math.floor(bendFrame * TweenSets);
+        const totalFrames = bendFrame*TweenSets
+        const frame = totalFrames-TweenSet
+        flow.updateCurve(0, tweenCurves(curves[TweenSet], curves[TweenSet + 1], frame));
     }
 
     useEffect(() => {
