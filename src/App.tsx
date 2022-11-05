@@ -1,32 +1,18 @@
 import "./App.css";
 import React, { useState, useEffect } from "react";
 import { hot } from "react-hot-loader";
-import { Canvas, useThree } from '@react-three/fiber'
+import { Canvas } from '@react-three/fiber'
 import { OrbitControl } from "./components/controllers/orbitControl";
 import { Bowline } from "./components/rope/bowline";
-import { Color } from "three";
-
-export const Environment = () => {
-  const { scene } = useThree();
-
-  useEffect(() => {
-    scene.background = new Color('black');
-  }, [])
-
-  return (
-    null
-  )
-}
-
+import { Sky } from "./components/controllers/sky";
 
 const App: React.FC = () => {
-
-  const [slider, setSlider] = useState("1000")
-  const [knotAnimation, setKnotAnimation] = useState(0)
+  const [animationSlider, setAnimationSlider] = useState("1000")
+  const [animation, setAnimation] = useState(0)
 
   useEffect(() => {
-    setKnotAnimation((parseInt(slider) / 1000))
-  }, [slider])
+    setAnimation((parseInt(animationSlider) / 1000))
+  }, [animationSlider])
 
   return (
     <div className="full-height">
@@ -35,18 +21,18 @@ const App: React.FC = () => {
         shadows
         camera={{ fov: 45, position: [0, 0, 50] }}
       >
-        <Environment />
+        <Sky />
         <OrbitControl />
         <ambientLight intensity={0.3} />
         <pointLight castShadow position={[10, 10, 10]} intensity={0.7} />
-        <Bowline animationFrame={knotAnimation} />
+        <Bowline frame={animation} />
       </Canvas>
       <input
         className="input"
-        onChange={(e) => setSlider(e.target.value)}
+        onChange={(e) => setAnimationSlider(e.target.value)}
         type="range"
         min="0"
-        value={slider}
+        value={animationSlider}
         max="1000"
       />
     </div >
