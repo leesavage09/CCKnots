@@ -4,7 +4,7 @@ myCurve = bpy.data.curves[0]
 spline= myCurve.splines[0]
 scale = 3
 curvepath_template = """
-var curves = new CurvePath<Vector3>();
+export const curves = new CurvePath<Vector3>();
 %s
 """ 
 curve_template = """\ncurves.add(new CubicBezierCurve3(%s\n));""" 
