@@ -25,7 +25,7 @@ const tweenV3 = (a: Vector3, b: Vector3, t: number) => {
 }
 
 export const tweenCurves = (a: CurvePath<Vector3>, b: CurvePath<Vector3>, t: number) => {
-    if (a.curves.length !== b.curves.length) throw Error("curves must be the same length")
+    if (a.curves.length !== b.curves.length) throw Error("curves must be the same length " + a.curves.length + " !== " + b.curves.length)
 
     const curves = a.curves.map((_, idx) => {
         const aCurve: CubicBezierCurve3 = a.curves[idx] as CubicBezierCurve3
