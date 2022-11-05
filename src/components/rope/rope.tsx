@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 import { Flow } from "three/examples/jsm/modifiers/CurveModifier.js";
 import { CurvePath, Vector3 } from "three";
 import { tweenCurves } from "./support";
-import { ropeMesh } from "./ropeMesh";
+import { useRopeMesh } from "./useRopeMesh";
 
 export interface RopeProps extends MeshProps {
     moveMin: number
@@ -16,6 +16,7 @@ export interface RopeProps extends MeshProps {
 
 export const Rope: React.FC<RopeProps> = ({ moveMin, moveMax, moveFrame, bendFrame, curves, debugOutline, ...props }) => {
     const three = useThree();
+    const ropeMesh = useRopeMesh();
     const [flow, setFlow] = useState<Flow>()
 
     const move = () => {
