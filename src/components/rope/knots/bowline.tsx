@@ -5,6 +5,8 @@ import { AnimatedKnotProps, Knot } from '../knot'
 export const Bowline: React.FC<AnimatedKnotProps> = ({ frame }) => (
     <Knot
         frame={frame}
+        color='#fff'
+        length={120}
         moveMin={-0.220}
         moveMax={0.163}
 
