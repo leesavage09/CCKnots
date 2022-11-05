@@ -1,7 +1,12 @@
-import React from 'react'
 import { CubicBezierCurve3, CurvePath, Vector3 } from 'three';
 
 export type TupleRange = [number, number]
+
+export type Animation = Array<{
+    frames: TupleRange,
+    action: (frame: number) => void,
+    values: TupleRange
+}>
 
 export const convertRange = (value: number, r1: TupleRange, r2: TupleRange) => {
     return (value - r1[0]) * (r2[1] - r2[0]) / (r1[1] - r1[0]) + r2[0];
@@ -41,4 +46,12 @@ export const tweenCurves = (a: CurvePath<Vector3>, b: CurvePath<Vector3>, t: num
     })
 
     return path
+}
+
+export const animate = (animation: Animation, frame: number) => {
+    animation.forEach((animation) => {
+        if (inRange(frame, animation.frames)) {
+            animation.action(convertRange(frame, animation.frames, animation.values))
+        }
+    })
 }

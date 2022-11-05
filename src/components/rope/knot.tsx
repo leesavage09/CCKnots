@@ -1,40 +1,46 @@
 import { MeshProps, useThree } from "@react-three/fiber"
 import React, { useEffect, useState } from "react"
 import { Flow } from "three/examples/jsm/modifiers/CurveModifier.js";
-import { ropeMesh } from "./ropeMesh";
 import { CurvePath, Mesh, Vector3 } from "three";
 import { tweenCurves } from "../support";
 
 export interface KnotProps extends MeshProps {
     moveMin: number
     moveMax: number
-    moveKeyFrame: number
-    bendKeyFrame?: number
-    curves: [CurvePath<Vector3>,CurvePath<Vector3>]
+    moveFrame: number
+    bendFrame: number
+    curves: [CurvePath<Vector3>, CurvePath<Vector3>]
     mesh: Mesh
     debugOutline: boolean
 }
 
-export const Knot: React.FC<KnotProps> = ({ moveMin, moveMax, moveKeyFrame, bendKeyFrame, curves, mesh, debugOutline, ...props }) => {
+export const Knot: React.FC<KnotProps> = ({ moveMin, moveMax, moveFrame, bendFrame, curves, mesh, debugOutline, ...props }) => {
     const three = useThree();
     const [flow, setFlow] = useState<Flow>()
 
-    useEffect(() => {
+    const move = () => {
         if (!flow) return
         const diff = moveMax - moveMin
-        const newPosition = moveMin + moveKeyFrame * diff
+        const newPosition = moveMin + moveFrame * diff
         const newShift = 0 - flow.uniforms.pathOffset.value + newPosition
         flow.moveAlongCurve(newShift)
-    }, [flow, moveKeyFrame])
+    }
+
+    const bend = () => {
+        if (!flow) return
+        flow.updateCurve(0, tweenCurves(curves[0], curves[1], bendFrame));
+    }
 
     useEffect(() => {
-        if (!flow || !bendKeyFrame) return
-        flow.updateCurve(0, tweenCurves(curves[0], curves[1], bendKeyFrame));
-    }, [flow, bendKeyFrame])
-
+        move()
+    }, [flow, moveFrame])
 
     useEffect(() => {
-        const flow = new Flow(ropeMesh);
+        bend()
+    }, [flow, bendFrame])
+
+    useEffect(() => {
+        const flow = new Flow(mesh);
         setFlow(flow)
         three.scene.add(flow.object3D);
         return () => {
@@ -45,20 +51,20 @@ export const Knot: React.FC<KnotProps> = ({ moveMin, moveMax, moveKeyFrame, bend
     if (debugOutline) {
         return (
             <>
-            <mesh
-                {...props}
-                position={[0, 0, 0]}
-            >
-                <tubeGeometry args={[curves[0], 500, 0.2, 4, false]} />
-                <meshStandardMaterial wireframe color={'red'} />
-            </mesh>
-            <mesh
-                {...props}
-                position={[0, 0, 0]}
-            >
-                <tubeGeometry args={[curves[1], 500, 0.2, 4, false]} />
-                <meshStandardMaterial wireframe color={'blue'}/>
-            </mesh>
+                <mesh
+                    {...props}
+                    position={[0, 0, 0]}
+                >
+                    <tubeGeometry args={[curves[0], 1000, 0.1, 1, false]} />
+                    <meshStandardMaterial wireframe color={'red'} />
+                </mesh>
+                <mesh
+                    {...props}
+                    position={[0, 0, 0]}
+                >
+                    <tubeGeometry args={[curves[1], 1000, 0.1, 1, false]} />
+                    <meshStandardMaterial wireframe color={'blue'} />
+                </mesh>
             </>
         )
     }
