@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { convertRange, inRange, TupleRange } from '../support'
-import { BowlineCurve, BowlineCurve_1 } from './bowlineCurve'
+import { BowlineCurve_0, BowlineCurve_1 } from './bowlineCurve'
 import { Knot } from './knot'
 import { ropeMesh } from './ropeMesh'
 
@@ -57,7 +57,7 @@ export const Bowline: AnimatedKnot = ({ frame }) => {
             moveKeyFrame={moveKeyFrame}
 
             bendKeyFrame={bendKeyFrame}
-            curves={[BowlineCurve, BowlineCurve_1]}
+            curves={[BowlineCurve_0, BowlineCurve_1]}
 
             mesh={ropeMesh}
             debugOutline={true}
