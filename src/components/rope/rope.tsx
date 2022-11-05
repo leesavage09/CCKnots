@@ -9,9 +9,11 @@ export interface RopeProps {
     move: {
         min: number
         max: number
+        length: number
         frame: number
     }
     curve: {
+        color: string
         frame: number
         keyframes: Array<CurvePath<Vector3>>
     }
@@ -19,7 +21,7 @@ export interface RopeProps {
 
 export const Rope: React.FC<RopeProps> = ({ move, curve }) => {
     const three = useThree();
-    const ropeMesh = useRopeMesh();
+    const ropeMesh = useRopeMesh(move.length,curve.color);
     const [flow, setFlow] = useState<Flow>()
 
     const shift = () => {
@@ -27,6 +29,7 @@ export const Rope: React.FC<RopeProps> = ({ move, curve }) => {
         const diff = move.max - move.min
         const newPosition = move.min + move.frame * diff
         const newShift = 0 - flow.uniforms.pathOffset.value + newPosition
+        // console.log({ newPosition })
         flow.moveAlongCurve(newShift)
     }
 
@@ -45,7 +48,11 @@ export const Rope: React.FC<RopeProps> = ({ move, curve }) => {
     }, [flow, move])
 
     useEffect(() => {
-        bend()
+        if (!flow) return
+        if (curve.keyframes.length === 1) {
+            flow.updateCurve(0, curve.keyframes[0]);
+        }
+        else bend()
     }, [flow, curve])
 
     useEffect(() => {
