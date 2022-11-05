@@ -2,9 +2,9 @@ import "./App.css";
 import React, { useState, useEffect } from "react";
 import { hot } from "react-hot-loader";
 import { Canvas } from '@react-three/fiber'
-import { OrbitControl } from "./components/controllers/orbitControl";
+import { OrbitControl } from "./components/orbitControl";
 import { Bowline } from "./components/rope/knots/bowline";
-import { Sky } from "./components/controllers/sky";
+import { Sky } from "./components/sky";
 
 const App: React.FC = () => {
   const [animationSlider, setAnimationSlider] = useState("1000")
