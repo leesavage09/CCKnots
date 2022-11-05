@@ -14,16 +14,16 @@ export type Animation = Array<{
 
 interface KnotProps {
     frame: number
-    moveAnimation: Animation
-    bendAnimation: Animation
     moveMin: number
     moveMax: number
-    curves: Array<CurvePath<Vector3>>
+    moveAnimation: Animation
+    curveAnimation: Animation
+    curveKeyframes: Array<CurvePath<Vector3>>
 }
 
-export const Knot: React.FC<KnotProps> = ({ frame, moveAnimation, bendAnimation, moveMin, moveMax, curves }) => {
+export const Knot: React.FC<KnotProps> = ({ frame, moveMin, moveMax, moveAnimation, curveAnimation, curveKeyframes }) => {
     const [moveFrame, setMoveFrame] = useState(0)
-    const [bendFrame, setBendFrame] = useState(0)
+    const [curveFrame, setCurveFrame] = useState(0)
 
     useEffect(() => {
         moveAnimation.forEach((animation) => {
@@ -32,21 +32,25 @@ export const Knot: React.FC<KnotProps> = ({ frame, moveAnimation, bendAnimation,
             }
         })
 
-        bendAnimation.forEach((animation) => {
+        curveAnimation.forEach((animation) => {
             if (inRange(frame, animation.frames)) {
-                setBendFrame(convertRange(frame, animation.frames, animation.values))
+                setCurveFrame(convertRange(frame, animation.frames, animation.values))
             }
         })
     }, [frame])
 
     return (
         <Rope
-            moveMin={moveMin}
-            moveMax={moveMax}
-            moveFrame={moveFrame}
-            bendFrame={bendFrame}
-            curves={curves}
-            debugOutline={false}
+            move={{
+                min: moveMin,
+                max: moveMax,
+                frame: moveFrame
+            }}
+
+            curve={{
+                frame: curveFrame,
+                keyframes: curveKeyframes,
+            }}
         />
     )
 }

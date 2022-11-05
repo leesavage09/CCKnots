@@ -5,6 +5,8 @@ import { Canvas } from '@react-three/fiber'
 import { OrbitControl } from "./components/orbitControl";
 import { Bowline } from "./components/rope/knots/bowline";
 import { Sky } from "./components/sky";
+import { Curve } from "./components/curve";
+import { BowlineCurve_0, BowlineCurve_1, BowlineCurve_2 } from "./components/rope/knots/bowlineCurves";
 
 const App: React.FC = () => {
   const [animationSlider, setAnimationSlider] = useState("1000")
@@ -26,6 +28,10 @@ const App: React.FC = () => {
         <ambientLight intensity={0.3} />
         <pointLight castShadow position={[10, 10, 10]} intensity={0.7} />
         <Bowline frame={animation} />
+
+        <Curve curve={BowlineCurve_0} color={'red'}/>
+        <Curve curve={BowlineCurve_1} color={'green'}/>
+        <Curve curve={BowlineCurve_2} color={'blue'}/>
       </Canvas>
       <input
         className="input"
