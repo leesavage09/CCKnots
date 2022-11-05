@@ -1,8 +1,9 @@
 import { MeshProps, useThree } from "@react-three/fiber"
 import React, { useEffect, useState } from "react"
 import { Flow } from "three/examples/jsm/modifiers/CurveModifier.js";
-import { CurvePath, Mesh, Vector3 } from "three";
+import { CurvePath, Vector3 } from "three";
 import { tweenCurves } from "../support";
+import { ropeMesh } from "./ropeMesh";
 
 export interface KnotProps extends MeshProps {
     moveMin: number
@@ -10,11 +11,10 @@ export interface KnotProps extends MeshProps {
     moveFrame: number
     bendFrame: number
     curves: [CurvePath<Vector3>, CurvePath<Vector3>]
-    mesh: Mesh
     debugOutline: boolean
 }
 
-export const Knot: React.FC<KnotProps> = ({ moveMin, moveMax, moveFrame, bendFrame, curves, mesh, debugOutline, ...props }) => {
+export const Knot: React.FC<KnotProps> = ({ moveMin, moveMax, moveFrame, bendFrame, curves, debugOutline, ...props }) => {
     const three = useThree();
     const [flow, setFlow] = useState<Flow>()
 
@@ -40,7 +40,7 @@ export const Knot: React.FC<KnotProps> = ({ moveMin, moveMax, moveFrame, bendFra
     }, [flow, bendFrame])
 
     useEffect(() => {
-        const flow = new Flow(mesh);
+        const flow = new Flow(ropeMesh);
         setFlow(flow)
         three.scene.add(flow.object3D);
         return () => {
