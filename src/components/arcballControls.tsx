@@ -1,13 +1,15 @@
 import { useThree } from "@react-three/fiber";
+import { ArcballControls } from "three/examples/jsm/controls/ArcballControls";
 import { useEffect } from "react"
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-export const OrbitControl = () => {
+
+export const ArcballControl = () => {
     const { camera, gl } = useThree();
+
 
     useEffect(
         () => {
-            const controls = new OrbitControls(camera, gl.domElement);
+            const controls = new ArcballControls(camera, gl.domElement);
 
             controls.minDistance = 10;
             controls.maxDistance = 70;
