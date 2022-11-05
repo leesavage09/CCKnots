@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
-import { animate, Animation } from '../support'
-import { BowlineCurve_0, BowlineCurve_1 } from './bowlineCurve'
-import { Knot } from './knot'
-import { ropeMesh } from './ropeMesh'
+import { animate, Animation } from '../../support'
+import { BowlineCurve_0, BowlineCurve_1 } from './bowlineCurves'
+import { Knot } from '../knot'
+import { ropeMesh } from '../ropeMesh'
 
 interface AnimatedKnotProps {
     frame: number
