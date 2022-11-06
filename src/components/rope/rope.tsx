@@ -3,25 +3,24 @@ import React, { useEffect, useState } from "react"
 import { Flow } from "three/examples/jsm/modifiers/CurveModifier.js";
 import { CurvePath, Vector3 } from "three";
 import { tweenCurves } from "./support";
-import { useRopeMesh } from "./useRopeMesh";
+import { RopeMeshConfig, useRopeMesh } from "./useRopeMesh";
 
 export interface RopeProps {
     move: {
         min: number
         max: number
-        length: number
         frame: number
     }
     curve: {
-        color: string
         frame: number
         keyframes: Array<CurvePath<Vector3>>
     }
+    ropeMeshConfig: RopeMeshConfig
 }
 
-export const Rope: React.FC<RopeProps> = ({ move, curve }) => {
+export const Rope: React.FC<RopeProps> = ({ move, curve, ropeMeshConfig }) => {
     const three = useThree();
-    const ropeMesh = useRopeMesh(move.length,curve.color);
+    const ropeMesh = useRopeMesh(ropeMeshConfig);
     const [flow, setFlow] = useState<Flow>()
 
     const shift = () => {
@@ -29,7 +28,6 @@ export const Rope: React.FC<RopeProps> = ({ move, curve }) => {
         const diff = move.max - move.min
         const newPosition = move.min + move.frame * diff
         const newShift = 0 - flow.uniforms.pathOffset.value + newPosition
-        // console.log({ newPosition })
         flow.moveAlongCurve(newShift)
     }
 
@@ -56,13 +54,14 @@ export const Rope: React.FC<RopeProps> = ({ move, curve }) => {
     }, [flow, curve])
 
     useEffect(() => {
+        if (!ropeMesh) return
         const flow = new Flow(ropeMesh);
         setFlow(flow)
         three.scene.add(flow.object3D);
         return () => {
             three.scene.remove(flow.object3D)
         }
-    }, [])
+    }, [ropeMesh])
 
     return null
 }

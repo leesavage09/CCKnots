@@ -22,16 +22,15 @@ const App: React.FC = () => {
       <h1>Bowline</h1>
       <Canvas
         shadows
-        camera={{ fov: 45, position: [0, 0, 50] }}
+        camera={{ fov: 45, position: [0, 0, 10] }}
       >
         <Sky />
         <ArcballControl />
         <ambientLight intensity={0.3} />
         <pointLight castShadow position={[10, 10, 10]} intensity={0.7} />
+        {/* <Bowline frame={animation} /> */}
         <SheetBend frame={animation} />
 
-        <Curve curve={curves_0} color={'red'} />
-        <Curve curve={curves_1} color={'blue'} />
       </Canvas>
       <input
         className="input"
@@ -41,7 +40,7 @@ const App: React.FC = () => {
         value={animationSlider}
         max="1000"
       />
-    </div >
+    </div>
   )
 }
 

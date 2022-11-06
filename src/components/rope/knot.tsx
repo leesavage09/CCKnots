@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { convertRange, inRange, TupleRange } from './support'
 import { Rope } from './rope'
 import { CurvePath, Vector3 } from 'three'
+import { RopeMeshConfig } from './useRopeMesh'
 
 export interface AnimatedKnotProps {
     frame: number
@@ -14,16 +15,15 @@ export type Animation = Array<{
 
 interface KnotProps {
     frame: number
-    color: string
-    length: number
     moveMin: number
     moveMax: number
     moveAnimation: Animation
     curveAnimation?: Animation
     curveKeyframes: Array<CurvePath<Vector3>>
+    ropeMeshConfig: RopeMeshConfig
 }
 
-export const Knot: React.FC<KnotProps> = ({ frame, length, color, moveMin, moveMax, moveAnimation, curveAnimation, curveKeyframes }) => {
+export const Knot: React.FC<KnotProps> = ({ frame, ropeMeshConfig, moveMin, moveMax, moveAnimation, curveAnimation, curveKeyframes }) => {
     const [moveFrame, setMoveFrame] = useState(0)
     const [curveFrame, setCurveFrame] = useState(0)
 
@@ -47,15 +47,13 @@ export const Knot: React.FC<KnotProps> = ({ frame, length, color, moveMin, moveM
             move={{
                 min: moveMin,
                 max: moveMax,
-                length,
                 frame: moveFrame
             }}
-
             curve={{
-                color,
                 frame: curveFrame,
                 keyframes: curveKeyframes,
             }}
+            ropeMeshConfig={ropeMeshConfig}
         />
     )
 }

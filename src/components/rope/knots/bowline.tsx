@@ -1,22 +1,31 @@
 import React from 'react'
 import { BowlineCurve_1, BowlineCurve_2, BowlineCurve_0 } from './bowlineCurves'
 import { AnimatedKnotProps, Knot } from '../knot'
+import { Vector2 } from 'three'
 
 export const Bowline: React.FC<AnimatedKnotProps> = ({ frame }) => (
     <Knot
         frame={frame}
-        color='#fff'
-        length={120}
+
+        ropeMeshConfig={{
+            length: 128,
+            radialSegments: 32,
+            heightSegments: 400,
+            repeat: new Vector2(2, 50),
+            color: '#ccc',
+            // wireframe:true
+        }}
+
         moveMin={-0.220}
         moveMax={0.163}
-
         moveAnimation={[{
-            frames: [0, 0.300],
+            frames: [0, 0.200],
             values: [0, 0.260]
         }, {
-            frames: [0.600, 1],
+            frames: [0.700, 1],
             values: [0.260, 1]
         }]}
+
         curveAnimation={[{
             frames: [0, 0.200],
             values: [0, 0]
