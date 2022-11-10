@@ -2,15 +2,15 @@ import React from 'react'
 import { Vector2 } from 'three'
 import { AnimatedKnotProps, Knot, Animation } from '../knot'
 import { Texture, useRopeMaterial } from '../useRopeMaterial'
-import { curves_0, curves_1 } from './curves/sheetBend'
+import { curves_0, curves_1 } from './curves/doubleSheetBend'
 
-interface SheetBendProps extends AnimatedKnotProps {
+interface DoubleSheetBendProps extends AnimatedKnotProps {
     useAlternativeTying?: boolean
 }
 
 type Tying = { standardTying: Animation, alternativeTying: Animation }
 
-export const SheetBend: React.FC<SheetBendProps> = ({ frame, useAlternativeTying }) => {
+export const DoubleSheetBend: React.FC<DoubleSheetBendProps> = ({ frame, useAlternativeTying }) => {
 
     const ropeMeshConfig = {
         length: 50,
@@ -58,29 +58,29 @@ export const SheetBend: React.FC<SheetBendProps> = ({ frame, useAlternativeTying
             <Knot
                 frame={frame}
 
-                moveMin={0.999}
-                moveMax={1.313}
+                moveMin={1.062428}
+                moveMax={1.261382168}
 
                 ropeMeshConfig={{
                     ...ropeMeshConfig,
-                    material: useRopeMaterial(new Vector2(2, 50), Texture.GREEN),
+                    material: useRopeMaterial(new Vector2(2, 50), Texture.WHITE),
                 }}
 
                 moveAnimation={useAlternativeTying ? knotOne.alternativeTying : knotOne.standardTying}
-                curveKeyframes={[curves_0]}
+                curveKeyframes={[curves_1]}
             />
 
             <Knot
                 frame={frame}
                 ropeMeshConfig={{
                     ...ropeMeshConfig,
-                    material: useRopeMaterial(new Vector2(2, 50), Texture.BLUE),
+                    material: useRopeMaterial(new Vector2(2, 50), Texture.RED),
                 }}
-                moveMin={-1.973}
-                moveMax={-1.685}
+                moveMin={-1.842824}
+                moveMax={-1.5565648}
 
                 moveAnimation={useAlternativeTying ? knotTwo.alternativeTying : knotTwo.standardTying}
-                curveKeyframes={[curves_1]}
+                curveKeyframes={[curves_0]}
             />
         </>
     )

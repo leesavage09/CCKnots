@@ -1,5 +1,5 @@
 import React from 'react'
-import { BowlineCurve_1, BowlineCurve_2, BowlineCurve_0 } from './bowlineCurves'
+import { BowlineCurve_1, BowlineCurve_2, BowlineCurve_0 } from './curves/bowline'
 import { AnimatedKnotProps, Knot } from '../knot'
 import { Vector2 } from 'three'
 import { Texture, useRopeMaterial } from '../useRopeMaterial'
