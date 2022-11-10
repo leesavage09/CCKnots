@@ -28,6 +28,7 @@ export const Rope: React.FC<RopeProps> = ({ move, curve, ropeMeshConfig }) => {
         const diff = move.max - move.min
         const newPosition = move.min + move.frame * diff
         const newShift = 0 - flow.uniforms.pathOffset.value + newPosition
+        console.log({newPosition})
         flow.moveAlongCurve(newShift)
     }
 
