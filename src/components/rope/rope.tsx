@@ -1,9 +1,9 @@
-import { useLoader, useThree } from "@react-three/fiber"
+import { useThree } from "@react-three/fiber"
 import React, { useEffect, useState } from "react"
 import { Flow } from "three/examples/jsm/modifiers/CurveModifier.js";
-import { CurvePath, DataTexture, TextureLoader, Vector3 } from "three";
+import { CurvePath, Vector3 } from "three";
 import { tweenCurves } from "./support";
-import { RopeMeshConfig, useRopeMesh } from "./useRopeMesh";
+import { RopeMeshConfig, useRopeMesh } from "../hooks/useRopeMesh";
 
 export interface RopeProps {
     move: {

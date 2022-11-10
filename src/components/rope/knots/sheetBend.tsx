@@ -1,7 +1,8 @@
 import React from 'react'
 import { Vector2 } from 'three'
-import { AnimatedKnotProps, Knot, Animation } from '../knot'
-import { Texture, useRopeMaterial } from '../useRopeMaterial'
+import { AnimatedKnotProps, Animation, useRopeAnimation } from '../../hooks/useRopeAnimation'
+import { Rope } from '../rope'
+import { Texture, useRopeMaterial } from '../../hooks/useRopeMaterial'
 import { curves_0, curves_1 } from './curves/sheetBend'
 
 interface SheetBendProps extends AnimatedKnotProps {
@@ -43,7 +44,7 @@ export const SheetBend: React.FC<SheetBendProps> = ({ frame, useAlternativeTying
             frames: [0.5, 1],
             values: [0, 1]
         }],
-        alternativeTying:  [{
+        alternativeTying: [{
             frames: [0, 0.5],
             values: [0, 1]
         }, {
@@ -53,34 +54,42 @@ export const SheetBend: React.FC<SheetBendProps> = ({ frame, useAlternativeTying
     }
 
 
+    const RopeOne = useRopeAnimation(frame, useAlternativeTying ? knotOne.alternativeTying : knotOne.standardTying)
+    const RopeTwo = useRopeAnimation(frame, useAlternativeTying ? knotTwo.alternativeTying : knotTwo.standardTying)
+
+
     return (
         <>
-            <Knot
-                frame={frame}
-
-                moveMin={0.999}
-                moveMax={1.313}
-
+            <Rope
+                move={{
+                    min: 0.999,
+                    max: 1.313,
+                    frame: RopeOne.moveFrame,
+                }}
+                curve={{
+                    frame: RopeOne.curveFrame,
+                    keyframes: [curves_0],
+                }}
                 ropeMeshConfig={{
                     ...ropeMeshConfig,
                     material: useRopeMaterial(new Vector2(2, 50), Texture.GREEN),
                 }}
-
-                moveAnimation={useAlternativeTying ? knotOne.alternativeTying : knotOne.standardTying}
-                curveKeyframes={[curves_0]}
             />
 
-            <Knot
-                frame={frame}
+            <Rope
+                move={{
+                    min: -1.973,
+                    max: -1.685,
+                    frame: RopeTwo.moveFrame,
+                }}
+                curve={{
+                    frame: RopeTwo.curveFrame,
+                    keyframes: [curves_1],
+                }}
                 ropeMeshConfig={{
                     ...ropeMeshConfig,
                     material: useRopeMaterial(new Vector2(2, 50), Texture.BLUE),
                 }}
-                moveMin={-1.973}
-                moveMax={-1.685}
-
-                moveAnimation={useAlternativeTying ? knotTwo.alternativeTying : knotTwo.standardTying}
-                curveKeyframes={[curves_1]}
             />
         </>
     )
