@@ -19,7 +19,7 @@ const App: React.FC = () => {
 
   return (
     <div className="full-height">
-      <h1>Bowline</h1>
+      <h1>Sheet Bend</h1>
       <Canvas
         shadows
         camera={{ fov: 45, position: [0, 0, 10] }}
@@ -30,6 +30,28 @@ const App: React.FC = () => {
         <pointLight castShadow position={[10, 10, 10]} intensity={0.7} />
         {/* <Bowline frame={animation} /> */}
         <SheetBend frame={animation} />
+
+      </Canvas>
+      <input
+        className="input"
+        onChange={(e) => setAnimationSlider(e.target.value)}
+        type="range"
+        min="0"
+        value={animationSlider}
+        max="1000"
+      />
+
+      <h1>Bowline</h1>
+      <Canvas
+        shadows
+        camera={{ fov: 45, position: [0, 0, 10] }}
+      >
+        <Sky />
+        <ArcballControl />
+        <ambientLight intensity={0.3} />
+        <pointLight castShadow position={[10, 10, 10]} intensity={0.7} />
+        <Bowline frame={animation} />
+        {/* <SheetBend frame={animation} /> */}
 
       </Canvas>
       <input
