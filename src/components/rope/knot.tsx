@@ -13,7 +13,7 @@ export type Animation = Array<{
     values: TupleRange
 }>
 
-interface KnotProps {
+export interface KnotProps {
     frame: number
     moveMin: number
     moveMax: number
@@ -21,9 +21,31 @@ interface KnotProps {
     curveAnimation?: Animation
     curveKeyframes: Array<CurvePath<Vector3>>
     ropeMeshConfig: RopeMeshConfig
+    loggingName?: string
 }
 
-export const Knot: React.FC<KnotProps> = ({ frame, ropeMeshConfig, moveMin, moveMax, moveAnimation, curveAnimation, curveKeyframes }) => {
+export const Knot: React.FC<KnotProps> = ({ frame, ropeMeshConfig, moveMin, moveMax, moveAnimation, curveAnimation, curveKeyframes, loggingName }) => {
+    const { moveFrame, curveFrame } = useRopeAnimation(frame, moveAnimation, curveAnimation)
+
+    return (
+        <Rope
+            move={{
+                min: moveMin,
+                max: moveMax,
+                frame: moveFrame
+            }}
+            curve={{
+                frame: curveFrame,
+                keyframes: curveKeyframes,
+            }}
+            ropeMeshConfig={ropeMeshConfig}
+            loggingName={loggingName}
+        />
+    )
+}
+
+
+export const useRopeAnimation = (frame: number, moveAnimation: Animation, curveAnimation?: Animation) => {
     const [moveFrame, setMoveFrame] = useState(0)
     const [curveFrame, setCurveFrame] = useState(0)
 
@@ -42,18 +64,9 @@ export const Knot: React.FC<KnotProps> = ({ frame, ropeMeshConfig, moveMin, move
         })
     }, [frame])
 
-    return (
-        <Rope
-            move={{
-                min: moveMin,
-                max: moveMax,
-                frame: moveFrame
-            }}
-            curve={{
-                frame: curveFrame,
-                keyframes: curveKeyframes,
-            }}
-            ropeMeshConfig={ropeMeshConfig}
-        />
-    )
+    return {
+        moveFrame,
+        curveFrame,
+    }
+
 }
