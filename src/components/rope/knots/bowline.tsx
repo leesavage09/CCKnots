@@ -2,6 +2,7 @@ import React from 'react'
 import { BowlineCurve_1, BowlineCurve_2, BowlineCurve_0 } from './bowlineCurves'
 import { AnimatedKnotProps, Knot } from '../knot'
 import { Vector2 } from 'three'
+import { Texture, useRopeMaterial } from '../useRopeMaterial'
 
 export const Bowline: React.FC<AnimatedKnotProps> = ({ frame }) => (
     <Knot
@@ -11,9 +12,7 @@ export const Bowline: React.FC<AnimatedKnotProps> = ({ frame }) => (
             length: 128,
             radialSegments: 32,
             heightSegments: 400,
-            repeat: new Vector2(2, 50),
-            color: '#ccc',
-            // wireframe:true
+            material: useRopeMaterial(new Vector2(2, 100),Texture.WHITE),
         }}
 
         moveMin={-0.220}
@@ -41,4 +40,4 @@ export const Bowline: React.FC<AnimatedKnotProps> = ({ frame }) => (
         }]}
         curveKeyframes={[BowlineCurve_0, BowlineCurve_1, BowlineCurve_2]}
     />
-)
+);

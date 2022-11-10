@@ -1,6 +1,7 @@
 import React from 'react'
 import { Vector2 } from 'three'
 import { AnimatedKnotProps, Knot } from '../knot'
+import { Texture, useRopeMaterial } from '../useRopeMaterial'
 import { curves_0, curves_1 } from './sheetBendCurves'
 
 export const SheetBend: React.FC<AnimatedKnotProps> = ({ frame }) => {
@@ -9,10 +10,7 @@ export const SheetBend: React.FC<AnimatedKnotProps> = ({ frame }) => {
         length: 50,
         radialSegments: 32,
         heightSegments: 400,
-        repeat: new Vector2(2, 50),
-        // wireframe:true
     }
-
 
     return (
         <>
@@ -24,7 +22,7 @@ export const SheetBend: React.FC<AnimatedKnotProps> = ({ frame }) => {
 
                 ropeMeshConfig={{
                     ...ropeMeshConfig,
-                    color: '#aba',
+                    material: useRopeMaterial(new Vector2(2, 50), Texture.GREEN),
                 }}
 
                 moveAnimation={[{
@@ -41,7 +39,7 @@ export const SheetBend: React.FC<AnimatedKnotProps> = ({ frame }) => {
                 frame={frame}
                 ropeMeshConfig={{
                     ...ropeMeshConfig,
-                    color: '#baa',
+                    material: useRopeMaterial(new Vector2(2, 50), Texture.BLUE),
                 }}
                 moveMin={-1.973}
                 moveMax={-1.643}
