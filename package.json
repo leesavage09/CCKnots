@@ -1,35 +1,64 @@
 {
-  "name": "CCKnots",
-  "version": "1.0.0",
-  "main": "/src/index.js",
-  "author": "Lee Savage",
-  "license": "",
+  "name": "CCknots",
+  "version": "0.0.1",
+  "private": true,
   "scripts": {
-    "start": "yarn run webpack-dev-server --mode development --host 0.0.0.0",
-    "build-dev": "yarn run webpack --mode development",
-    "build-prod": "yarn run webpack --mode production"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
+    "eject": "react-scripts eject"
   },
   "dependencies": {
+    "@capacitor/android": "4.4.0",
+    "@capacitor/app": "4.1.0",
+    "@capacitor/core": "4.4.0",
+    "@capacitor/haptics": "4.0.1",
+    "@capacitor/keyboard": "4.0.1",
+    "@capacitor/status-bar": "4.0.1",
+    "@ionic/react": "^6.0.0",
+    "@ionic/react-router": "^6.0.0",
     "@react-three/fiber": "^8.8.3",
+    "ionicons": "^6.0.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "three": "^0.144.0"
+    "three": "^0.144.0",
+    "react-router": "^5.2.0",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "^5.0.0",
+    "typescript": "^4.1.3",
+    "workbox-background-sync": "^5.1.4",
+    "workbox-broadcast-update": "^5.1.4",
+    "workbox-cacheable-response": "^5.1.4",
+    "workbox-core": "^5.1.4",
+    "workbox-expiration": "^5.1.4",
+    "workbox-google-analytics": "^5.1.4",
+    "workbox-navigation-preload": "^5.1.4",
+    "workbox-precaching": "^5.1.4",
+    "workbox-range-requests": "^5.1.4",
+    "workbox-routing": "^5.1.4",
+    "workbox-strategies": "^5.1.4",
+    "workbox-streams": "^5.1.4"
   },
   "devDependencies": {
-    "@babel/cli": "^7.18.10",
-    "@babel/core": "^7.19.1",
-    "@babel/preset-env": "^7.19.1",
-    "@babel/preset-react": "^7.18.6",
+    "@capacitor/cli": "4.4.0",
+    "@types/jest": "^26.0.20",
+    "@types/node": "^12.19.15",
+    "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
-    "@types/three": "^0.144.0",
-    "babel-loader": "^8.2.5",
-    "css-loader": "^6.7.1",
-    "react-hot-loader": "^4.13.0",
-    "style-loader": "^3.3.1",
-    "ts-loader": "^9.4.1",
-    "typescript": "^4.8.3",
-    "webpack": "^5.74.0",
-    "webpack-cli": "^4.10.0",
-    "webpack-dev-server": "^4.11.1"
+    "@types/react-router": "^5.1.11",
+    "@types/react-router-dom": "^5.1.7",
+    "@types/three": "^0.144.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }

@@ -1,0 +1,7 @@
+{
+  "name": "CCknots",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "react"
+}
