@@ -6,15 +6,107 @@ import { Bowline } from "../components/threejs/rope/knots/bowline";
 import { SheetBend } from "../components/threejs/rope/knots/sheetBend";
 import { DoubleSheetBend } from "../components/threejs/rope/knots/doubleSheetBend";
 import { KnotScene } from "../components/knotScene";
+import { useKnotInfo } from "../components/knotInfo";
+import { Typography } from "@mui/material";
 
-export const CloveHitchPage: React.FC = () => (<KnotScene Knot={CloveHitch} camera={[0,0,30]} />)
+export const CloveHitchPage: React.FC = () => {
+    const { frame, infoDraw } = useKnotInfo((
+        <>
+            <Typography variant="h3" gutterBottom>
+                Clove Hitch
+            </Typography>
+        </>
+    ));
 
-export const RoundTurnPage: React.FC = () => (<KnotScene Knot={RoundTurn} camera={[0,10,30]} />)
+    return (
+        <>
+            <KnotScene Knot={CloveHitch} camera={[0, 0, 30]} frame={frame} />
+            {infoDraw}
+        </>
+    )
+}
 
-export const ReefKnotPage: React.FC = () => (<KnotScene Knot={ReefKnot} camera={[0,0,50]} />)
+export const RoundTurnPage: React.FC = () => {
+    const { frame, infoDraw } = useKnotInfo((
+        <>
+            <Typography variant="h3" gutterBottom>
+                Round Turn & Two Half Hitches
+            </Typography>
+        </>
+    ));
 
-export const BowlinePage: React.FC = () => (<KnotScene Knot={Bowline} camera={[0,0,70]} />)
+    return (
+        <>
+            <KnotScene Knot={RoundTurn} camera={[0, 10, 30]} frame={frame} />
+            {infoDraw}
+        </>
+    )
+}
 
-export const SheetBendPage: React.FC = () => (<KnotScene Knot={SheetBend} camera={[0,0,50]} />)
+export const ReefKnotPage: React.FC = () => {
+    const { frame, infoDraw } = useKnotInfo((
+        <>
+            <Typography variant="h3" gutterBottom>
+                Reef Knot
+            </Typography>
+        </>
+    ));
 
-export const DoubleSheetBendPage: React.FC = () => (<KnotScene Knot={DoubleSheetBend} camera={[0,0,50]}/>)
+    return (
+        <>
+            <KnotScene Knot={ReefKnot} camera={[0, 0, 50]} frame={frame} />
+            {infoDraw}
+        </>
+    )
+}
+
+export const BowlinePage: React.FC = () => {
+    const { frame, infoDraw } = useKnotInfo((
+        <>
+            <Typography variant="h3" gutterBottom>
+                Bowline
+            </Typography>
+        </>
+    ));
+
+    return (
+        <>
+            <KnotScene Knot={Bowline} camera={[0, 0, 70]} frame={frame} />
+            {infoDraw}
+        </>
+    )
+}
+
+export const SheetBendPage: React.FC = () => {
+    const { frame, infoDraw } = useKnotInfo((
+        <>
+            <Typography variant="h3" gutterBottom>
+                Sheet Bend
+            </Typography>
+        </>
+    ));
+
+    return (
+        <>
+            <KnotScene Knot={SheetBend} camera={[0, 0, 50]} frame={frame} />
+            {infoDraw}
+        </>
+    )
+}
+
+export const DoubleSheetBendPage: React.FC = () => {
+    const { frame, infoDraw } = useKnotInfo((
+        <>
+            <Typography variant="h3" gutterBottom>
+                Double Sheet Bend
+            </Typography>
+        </>
+    ));
+
+    return (
+        <>
+            <KnotScene Knot={DoubleSheetBend} camera={[0, 0, 50]} frame={frame} />
+            {infoDraw}
+        </>
+    )
+}

@@ -25,12 +25,6 @@ export const useMenu = () => {
             onKeyDown={() => setOpen(false)}
         >
             <List>
-                <ListItem key='Home' disablePadding onClick={() => history.push('/')}>
-                    <ListItemButton  >
-                        <ListItemIcon><HomeIcon /></ListItemIcon>
-                        <ListItemText primary='All Knots' />
-                    </ListItemButton>
-                </ListItem>
                 <ListItem key='Review' disablePadding>
                     <ListItemButton>
                         <ListItemIcon><ReviewIcon /></ListItemIcon>
