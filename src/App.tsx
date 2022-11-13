@@ -2,6 +2,7 @@ import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Home } from './pages/Home';
+import { BowlinePage, CloveHitchPage, DoubleSheetBendPage, ReefKnotPage, RoundTurnPage, SheetBendPage } from './pages/knotPages';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -17,6 +18,7 @@ import '@fontsource/roboto/400.css';
 import '@fontsource/roboto/500.css';
 import '@fontsource/roboto/700.css';
 
+
 setupIonicReact();
 
 const App: React.FC = () => (
@@ -25,6 +27,24 @@ const App: React.FC = () => (
       <IonRouterOutlet>
         <Route exact path="/home">
           <Home />
+        </Route>
+        <Route exact path="/knots/cloveHitch">
+          <CloveHitchPage />
+        </Route>
+        <Route exact path="/knots/roundTurn">
+          <RoundTurnPage />
+        </Route>
+        <Route exact path="/knots/reefKnot">
+          <ReefKnotPage />
+        </Route>
+        <Route exact path="/knots/bowline">
+          <BowlinePage />
+        </Route>
+        <Route exact path="/knots/sheetBend">
+          <SheetBendPage />
+        </Route>
+        <Route exact path="/knots/doubleSheetBend">
+          <DoubleSheetBendPage />
         </Route>
         <Route exact path="/">
           <Redirect to="/home" />
