@@ -1,4 +1,3 @@
-import "./Home.css";
 import React, { useState, useEffect } from "react";
 import { IonSlide, IonContent } from '@ionic/react';
 import { Canvas } from '@react-three/fiber'
@@ -11,6 +10,7 @@ import { DoubleSheetBend } from "../components/rope/knots/doubleSheetBend";
 import { CloveHitch } from "../components/rope/knots/cloveHitch";
 import { RoundTurn } from "../components/rope/knots/roundTurn";
 
+import "./Home.css";
 
 export const Home: React.FC = () => {
   const [animationSlider, setAnimationSlider] = useState("1000")
