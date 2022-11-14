@@ -18,7 +18,7 @@ type UseKnotControls = () => {
 export const useKnotControls: UseKnotControls = () => {
     const [animationSlider, setAnimationSlider] = useState(0)
     const [drawOpen, setDrawOpen] = React.useState(false)
-    const [play, setPlay] = useState(false)
+    const [play, setPlay] = useState(true)
     useAnimationFrame((deltaTime: number) => setAnimationSlider(value => (value + deltaTime * 0.015)), play)
     const history = useHistory()
 
