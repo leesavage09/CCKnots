@@ -1,12 +1,13 @@
 import React, { useState } from "react";
-import { Box, Button, Drawer, Slider, Stack } from "@mui/material";
 import { useHistory } from "react-router";
+import { Box, Button, Drawer, Slider, Stack } from "@mui/material";
 import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 import SkipPreviousRoundedIcon from '@mui/icons-material/SkipPreviousRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
+import PauseRoundedIcon from '@mui/icons-material/PauseRounded';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import SkipNextRoundedIcon from '@mui/icons-material/SkipNextRounded';
-import { IonSlide } from "@ionic/react";
+import { useAnimationFrame } from "./useAnimationFrame";
 
 type UseKnotControls = () => {
     frame: number,
@@ -15,10 +16,12 @@ type UseKnotControls = () => {
 }
 
 export const useKnotControls: UseKnotControls = () => {
-    const [animationSlider, setAnimationSlider] = useState(0);
+    const [animationSlider, setAnimationSlider] = useState(0)
+    const [drawOpen, setDrawOpen] = React.useState(false)
+    const [play, setPlay] = useState(false)
+    useAnimationFrame((deltaTime: number) => setAnimationSlider(value => (value + deltaTime * 0.015)), play)
     const history = useHistory()
-    const [drawOpen, setDrawOpen] = React.useState(false);
-
+    
     return {
         frame: animationSlider / 100,
         Drawer: ({ children }) => (
@@ -44,23 +47,27 @@ export const useKnotControls: UseKnotControls = () => {
                     backgroundColor: 'white',
                 }}
             >
-
                 <Slider
                     sx={{ width: '90vw', display: 'flex', flexShrink: 1, marginBottom: 2 }}
                     aria-label="Animation"
+                    step={0.001}
+                    min={0}
+                    max={100}
                     value={animationSlider}
                     onChange={(_, value) => setAnimationSlider(value as number)}
                 />
                 <Box>
                     <Stack direction="row" spacing={2}>
                         <Button
-                            variant="text"
+                            variant="contained"
+                            sx={{ padding: 0, borderRadius: 10, minWidth: 40 }}
                             onClick={() => history.push('/')}
                         >
                             <ArrowCircleLeftOutlinedIcon />
                         </Button>
                         <Button
                             variant="contained"
+                            disabled={animationSlider === 0}
                             sx={{ borderRadius: 10 }}
                             onClick={() => setAnimationSlider(0)}
                         >
@@ -69,19 +76,21 @@ export const useKnotControls: UseKnotControls = () => {
                         <Button
                             variant="contained"
                             sx={{ borderRadius: 10 }}
-                            onClick={() => alert('not yet implemented')}
+                            onClick={() => setPlay(!play)}
                         >
-                            <PlayArrowRoundedIcon />
+                            {play ? <PauseRoundedIcon /> : <PlayArrowRoundedIcon />}
                         </Button>
                         <Button
                             variant="contained"
+                            disabled={animationSlider === 100}
                             sx={{ borderRadius: 10 }}
                             onClick={() => setAnimationSlider(100)}
                         >
                             <SkipNextRoundedIcon />
                         </Button>
                         <Button
-                            variant="text"
+                            variant="contained"
+                            sx={{ padding: 0, borderRadius: 10, minWidth: 40 }}
                             onClick={() => setDrawOpen(true)}
                         >
                             <InfoOutlinedIcon />
