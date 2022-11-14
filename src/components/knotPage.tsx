@@ -11,7 +11,7 @@ interface KnotPageProps {
 }
 
 export const KnotPage: React.FC<KnotPageProps> = ({ knot, description, cameraPos }) => {
-    const { frame, controls, Drawer } = useKnotControls()
+    const { frame, controls, drawer } = useKnotControls(description)
     const [canvas, setcanvas] = useState<JSX.Element>()
 
     // Fix for a possible race condition in threejs fiber
@@ -24,9 +24,7 @@ export const KnotPage: React.FC<KnotPageProps> = ({ knot, description, cameraPos
             <AppBar />
             {canvas}
             {controls}
-            <Drawer>
-                {description}
-            </Drawer>
+            {drawer}
         </>
     )
 }

@@ -1,21 +1,21 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
-import { Box, Button, Drawer, Slider, Stack } from "@mui/material";
-import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
+import { Box, Button, Drawer, IconButton, Slider, Stack } from "@mui/material";
 import SkipPreviousRoundedIcon from '@mui/icons-material/SkipPreviousRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import PauseRoundedIcon from '@mui/icons-material/PauseRounded';
 import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
+import CloseIcon from '@mui/icons-material/Close';
 import SkipNextRoundedIcon from '@mui/icons-material/SkipNextRounded';
 import { useAnimationFrame } from "./useAnimationFrame";
 
-type UseKnotControls = () => {
+type UseKnotControls = (description: JSX.Element) => {
     frame: number,
-    Drawer: React.FC<React.PropsWithChildren>
+    drawer: JSX.Element
     controls: JSX.Element
 }
 
-export const useKnotControls: UseKnotControls = () => {
+export const useKnotControls: UseKnotControls = (description) => {
     const [animationSlider, setAnimationSlider] = useState(0)
     const [drawOpen, setDrawOpen] = React.useState(false)
     const [play, setPlay] = useState(true)
@@ -24,13 +24,20 @@ export const useKnotControls: UseKnotControls = () => {
 
     return {
         frame: animationSlider / 100,
-        Drawer: ({ children }) => (
+        drawer: (
             <Drawer
                 anchor={'bottom'}
                 open={drawOpen}
                 onClose={() => setDrawOpen(false)}
             >
-                {children}
+                <Box
+                    sx={{ height: '100vh', padding: '10px' }}
+                >
+                    <IconButton aria-label="close" onClick={() => setDrawOpen(false)} sx={{float:'right'}}>
+                        <CloseIcon />
+                    </IconButton>
+                    {description}
+                </Box>
             </Drawer>
         ),
         controls: (
