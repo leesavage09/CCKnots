@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { KnotScene } from "../components/knotScene";
 import { useKnotControls } from "../components/hooks/useKnotControls";
 import { AnimatedKnotProps } from "../components/threejs/hooks/useRopeAnimation";
@@ -12,11 +12,17 @@ interface KnotPageProps {
 
 export const KnotPage: React.FC<KnotPageProps> = ({ knot, description, cameraPos }) => {
     const { frame, controls, Drawer } = useKnotControls()
+    const [canvas, setcanvas] = useState<JSX.Element>()
+
+    // Fix for a possible race condition in threejs fiber
+    setTimeout(() => {
+        setcanvas(<KnotScene Knot={knot} cameraPos={cameraPos} frame={frame} />);
+    }, 0);
 
     return (
         <>
             <AppBar />
-            <KnotScene Knot={knot} cameraPos={cameraPos} frame={frame} />
+            {canvas}
             {controls}
             <Drawer>
                 {description}
