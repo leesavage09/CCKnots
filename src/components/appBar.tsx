@@ -7,23 +7,22 @@ import MenuIcon from '@mui/icons-material/Menu';
 import { useMenu } from './useMenu';
 
 export const AppBar = () => {
-  const { setOpen, menu } = useMenu()
+  const { open, menu } = useMenu()
 
   return (
     <Box sx={{ flexGrow: 1 }}>
       <MuiAppBar position="static">
         <Toolbar>
+          {menu}
           <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="menu"
             sx={{ mr: 2 }}
+            onClick={open}
           >
-            <MenuIcon
-              onClick={() => setOpen(true)}
-            />
-            {menu}
+            <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
             CCKnots

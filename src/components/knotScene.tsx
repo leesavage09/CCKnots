@@ -13,18 +13,18 @@ import InfoIcon from '@mui/icons-material/Info';
 import SkipNextRoundedIcon from '@mui/icons-material/SkipNextRounded';
 import { borderRadius } from "@mui/system";
 import { IonContent, IonSlide } from "@ionic/react";
-import { useKnotInfo } from "./knotInfo";
+import { useKnotControls } from "./useKnotControls";
 
 interface KnotSceneProps {
     Knot: React.FC<AnimatedKnotProps>
-    camera?: [number, number, number],
+    cameraPos?: [number, number, number],
     frame: number
 }
 
-export const KnotScene: React.FC<KnotSceneProps> = ({ Knot, camera, frame }) => (
+export const KnotScene: React.FC<KnotSceneProps> = ({ Knot, cameraPos = [0, 0, 20], frame }) => (
     <Canvas
         shadows
-        camera={{ fov: 45, position: camera ? camera : [0, 0, 20] }}
+        camera={{ fov: 45, position: cameraPos }}
     >
         <Sky />
         <ArcballControl />

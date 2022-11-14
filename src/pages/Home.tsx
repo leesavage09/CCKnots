@@ -67,7 +67,6 @@ export const Home = () => {
                             />
                         </Stack>
                         <div style={{ height: 100 }} />
-
                     </Container>
                 </IonContent>
             </IonSlide>

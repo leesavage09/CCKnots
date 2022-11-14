@@ -8,19 +8,29 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import SkipNextRoundedIcon from '@mui/icons-material/SkipNextRounded';
 import { IonSlide } from "@ionic/react";
 
-type UseKnotInfo = (children: JSX.Element) => {
+type UseKnotControls = () => {
     frame: number,
-    infoDraw: JSX.Element
+    Drawer: React.FC<React.PropsWithChildren>
+    controls: JSX.Element
 }
 
-export const useKnotInfo: UseKnotInfo = (children) => {
+export const useKnotControls: UseKnotControls = () => {
     const [animationSlider, setAnimationSlider] = useState(0);
     const history = useHistory()
     const [drawOpen, setDrawOpen] = React.useState(false);
 
     return {
         frame: animationSlider / 100,
-        infoDraw: (
+        Drawer: ({ children }) => (
+            <Drawer
+                anchor={'bottom'}
+                open={drawOpen}
+                onClose={() => setDrawOpen(false)}
+            >
+                {children}
+            </Drawer>
+        ),
+        controls: (
             <Box
                 sx={{
                     position: 'absolute',
@@ -78,16 +88,6 @@ export const useKnotInfo: UseKnotInfo = (children) => {
                         </Button>
                     </Stack>
                 </Box>
-
-                <Drawer
-                    anchor={'bottom'}
-                    open={drawOpen}
-                    onClose={() => setDrawOpen(false)}
-                >
-                    <IonSlide>
-                        {children}
-                    </IonSlide>
-                </Drawer>
             </Box>
         )
     }

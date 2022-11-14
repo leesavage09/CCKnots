@@ -15,9 +15,7 @@ interface KnotCardProps {
 export const KnotCard: React.FC<KnotCardProps> = ({ image, title, body, action }) => {
     return (
         <Card>
-            <CardActionArea
-                onClick={action}
-            >
+            <CardActionArea onClick={action} >
                 <CardMedia
                     component="img"
                     height="140"
