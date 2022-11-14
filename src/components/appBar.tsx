@@ -25,7 +25,7 @@ export const AppBar = () => {
             >
               <MenuIcon />
             </IconButton>
-            <Typography variant="h6" component="div">
+            <Typography variant="h6" component="h1">
               CCKnots
             </Typography>
           </Toolbar>

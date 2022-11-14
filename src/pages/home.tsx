@@ -25,7 +25,7 @@ export const Home = () => {
             <AppBar />
             <IonSlide>
                 <IonContent>
-                    <Typography variant="h1" gutterBottom>
+                    <Typography variant="h4" component="h2" gutterBottom>
                         Knots
                     </Typography>
                     <Container maxWidth="xs">
