@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import { AppBar, Box, Button, Drawer, IconButton, Paper, Slider, Stack, Toolbar, Typography } from "@mui/material";
+import { Box, Button, Drawer, Slider, Stack } from "@mui/material";
 import { useHistory } from "react-router";
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
+import ArrowCircleLeftOutlinedIcon from '@mui/icons-material/ArrowCircleLeftOutlined';
 import SkipPreviousRoundedIcon from '@mui/icons-material/SkipPreviousRounded';
-import PlayCircleFilledWhiteIcon from '@mui/icons-material/PlayCircleFilledWhite';
-import InfoIcon from '@mui/icons-material/Info';
+import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
+import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import SkipNextRoundedIcon from '@mui/icons-material/SkipNextRounded';
 import { IonSlide } from "@ionic/react";
 
@@ -14,7 +14,7 @@ type UseKnotInfo = (children: JSX.Element) => {
 }
 
 export const useKnotInfo: UseKnotInfo = (children) => {
-    const [animationSlider, setAnimationSlider] = useState(100);
+    const [animationSlider, setAnimationSlider] = useState(0);
     const history = useHistory()
     const [drawOpen, setDrawOpen] = React.useState(false);
 
@@ -47,7 +47,7 @@ export const useKnotInfo: UseKnotInfo = (children) => {
                             variant="text"
                             onClick={() => history.push('/')}
                         >
-                            <ArrowBackIcon />
+                            <ArrowCircleLeftOutlinedIcon />
                         </Button>
                         <Button
                             variant="contained"
@@ -61,7 +61,7 @@ export const useKnotInfo: UseKnotInfo = (children) => {
                             sx={{ borderRadius: 10 }}
                             onClick={() => alert('not yet implemented')}
                         >
-                            <PlayCircleFilledWhiteIcon />
+                            <PlayArrowRoundedIcon />
                         </Button>
                         <Button
                             variant="contained"
@@ -74,7 +74,7 @@ export const useKnotInfo: UseKnotInfo = (children) => {
                             variant="text"
                             onClick={() => setDrawOpen(true)}
                         >
-                            <InfoIcon />
+                            <InfoOutlinedIcon />
                         </Button>
                     </Stack>
                 </Box>
