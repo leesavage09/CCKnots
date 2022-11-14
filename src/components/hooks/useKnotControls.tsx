@@ -21,7 +21,7 @@ export const useKnotControls: UseKnotControls = () => {
     const [play, setPlay] = useState(false)
     useAnimationFrame((deltaTime: number) => setAnimationSlider(value => (value + deltaTime * 0.015)), play)
     const history = useHistory()
-    
+
     return {
         frame: animationSlider / 100,
         Drawer: ({ children }) => (
@@ -56,15 +56,15 @@ export const useKnotControls: UseKnotControls = () => {
                     value={animationSlider}
                     onChange={(_, value) => setAnimationSlider(value as number)}
                 />
-                <Box>
+                <Box
+                    sx={{
+                        display: 'flex',
+                        flexDirection: 'row',
+                        justifyContent: 'space-between',
+                        width: '100%',
+                    }}
+                >
                     <Stack direction="row" spacing={2}>
-                        <Button
-                            variant="contained"
-                            sx={{ padding: 0, borderRadius: 10, minWidth: 40 }}
-                            onClick={() => history.push('/')}
-                        >
-                            <ArrowCircleLeftOutlinedIcon />
-                        </Button>
                         <Button
                             variant="contained"
                             disabled={animationSlider === 0}
@@ -88,16 +88,17 @@ export const useKnotControls: UseKnotControls = () => {
                         >
                             <SkipNextRoundedIcon />
                         </Button>
-                        <Button
-                            variant="contained"
-                            sx={{ padding: 0, borderRadius: 10, minWidth: 40 }}
-                            onClick={() => setDrawOpen(true)}
-                        >
-                            <InfoOutlinedIcon />
-                        </Button>
                     </Stack>
+                    <Button
+                        variant="contained"
+                        sx={{ padding: 0, borderRadius: 10, minWidth: 40 }}
+                        onClick={() => setDrawOpen(true)}
+                    >
+                        <InfoOutlinedIcon />
+                    </Button>
+
                 </Box>
-            </Box>
+            </Box >
         )
     }
 }
