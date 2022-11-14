@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { curves_0 } from './curves/cloveHitch'
 import { AnimatedKnotProps, useRopeAnimation } from '../../hooks/useRopeAnimation'
 import { Euler, Vector2 } from 'three'
@@ -12,6 +12,12 @@ export const CloveHitch: React.FC<AnimatedKnotProps> = ({ frame }) => {
         values: [0, 1]
     }])
     const mat = useMetalMaterial();
+
+    useEffect(() => {
+      return () => {
+        mat?.dispose()
+      }
+    }, [])
 
     return (
         <>

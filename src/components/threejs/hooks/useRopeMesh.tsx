@@ -18,6 +18,10 @@ export const useRopeMesh = (ropeMeshConfig: RopeMeshConfig) => {
 
         const ropeMesh = new Mesh(geometry, ropeMeshConfig.material)
         setMesh(ropeMesh)
+
+        return ()=>{
+            geometry.dispose()
+        }
     }, [ropeMeshConfig.material])
 
 

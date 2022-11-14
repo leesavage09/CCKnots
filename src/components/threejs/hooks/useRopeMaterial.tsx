@@ -17,18 +17,18 @@ export const useRopeMaterial = (repeat: Vector2, _map: Texture) => {
     const [maps, setMaps] = useState<any>()
 
     useEffect(() => {
-        setMaps({
-            map: _map.clone(),
-            aoMap: _aoMap.clone(),
-            roughnessMap: _roughnessMap.clone(),
-            normalMap: _normalMap.clone(),
-            bumpMap: _bumpMap && _bumpMap?.clone(),
-        })
+        setMaps([
+            _map.clone(),
+            _aoMap.clone(),
+            _roughnessMap.clone(),
+            _normalMap.clone(),
+            _bumpMap && _bumpMap?.clone(),
+        ])
     }, [])
 
     useEffect(() => {
         if (!maps) return
-        const { map, aoMap, roughnessMap, normalMap, bumpMap } = maps
+        const [map, aoMap, roughnessMap, normalMap, bumpMap] = maps
 
         aoMap.wrapS = roughnessMap.wrapS = normalMap.wrapS = bumpMap.wrapS = map.wrapS = aoMap.wrapT = roughnessMap.wrapT = normalMap.wrapT = bumpMap.wrapT = map.wrapT = RepeatWrapping
         aoMap.repeat = roughnessMap.repeat = normalMap.repeat = bumpMap.repeat = map.repeat = repeat
@@ -41,6 +41,12 @@ export const useRopeMaterial = (repeat: Vector2, _map: Texture) => {
             roughness: 0.5,
             aoMap: aoMap,
         }))
+
+        return () => {
+            maps.forEach((t: Texture) => t.dispose())
+            material?.dispose()
+        }
+
     }, [maps])
 
     return material
