@@ -2,7 +2,7 @@ import React from 'react'
 import { BowlineCurve_1, BowlineCurve_2, BowlineCurve_0 } from './curves/bowline'
 import { AnimatedKnotProps, useRopeAnimation } from '../../hooks/useRopeAnimation'
 import { Vector2 } from 'three'
-import { Texture, useRopeMaterial } from '../../hooks/useRopeMaterial'
+import { useRopeMaterial, whiteTexture } from '../../hooks/useRopeMaterial'
 import { Rope } from '../rope'
 
 export const Bowline: React.FC<AnimatedKnotProps> = ({ frame }) => {
@@ -41,7 +41,7 @@ export const Bowline: React.FC<AnimatedKnotProps> = ({ frame }) => {
                 length: 128,
                 radialSegments: 32,
                 heightSegments: 400,
-                material: useRopeMaterial(new Vector2(2, 100), Texture.WHITE),
+                material: useRopeMaterial(new Vector2(2, 100), whiteTexture),
             }}
         />
     );

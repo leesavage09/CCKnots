@@ -1,20 +1,18 @@
-import { useLoader } from '@react-three/fiber';
 import { useEffect, useState } from 'react';
-import { MeshStandardMaterial, RepeatWrapping, TextureLoader, Vector2 } from "three";
+import { MeshStandardMaterial, RepeatWrapping, Texture, TextureLoader, Vector2 } from "three";
 
-export const enum Texture {
-    WHITE = 'textures/rope/map_white.png',
-    RED = 'textures/rope/map.png',
-    GREEN = 'textures/rope/map_green.png',
-    BLUE = 'textures/rope/map_blue.png',
-}
+const loader = new TextureLoader();
+const _aoMap = loader.load('textures/rope/aoMap.png')
+const _roughnessMap = loader.load('textures/rope/roughnessMap.png')
+const _normalMap = loader.load('textures/rope/normalMap.png')
+const _bumpMap = loader.load('textures/rope/bumpMap.png')
 
-export const useRopeMaterial = (repeat: Vector2, texture: Texture) => {
-    const _aoMap = useLoader(TextureLoader, 'textures/rope/aoMap.png');
-    const _roughnessMap = useLoader(TextureLoader, 'textures/rope/roughnessMap.png');
-    const _normalMap = useLoader(TextureLoader, 'textures/rope/normalMap.png');
-    const _bumpMap = useLoader(TextureLoader, 'textures/rope/bumpMap.png');
-    const _map = useLoader(TextureLoader, texture);
+export const whiteTexture = loader.load('textures/rope/map_white.png')
+export const redTexture = loader.load('textures/rope/map.png')
+export const greenTexture = loader.load('textures/rope/map_green.png')
+export const blueTexture = loader.load('textures/rope/map_blue.png')
+
+export const useRopeMaterial = (repeat: Vector2, _map: Texture) => {
     const [material, setMaterial] = useState<MeshStandardMaterial>()
     const [maps, setMaps] = useState<any>()
 

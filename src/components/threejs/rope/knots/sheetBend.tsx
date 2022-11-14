@@ -2,7 +2,7 @@ import React from 'react'
 import { Vector2 } from 'three'
 import { AnimatedKnotProps, Animation, useRopeAnimation } from '../../hooks/useRopeAnimation'
 import { Rope } from '../rope'
-import { Texture, useRopeMaterial } from '../../hooks/useRopeMaterial'
+import { redTexture, useRopeMaterial, whiteTexture } from '../../hooks/useRopeMaterial'
 import { curves_0, curves_1 } from './curves/sheetBend'
 
 interface SheetBendProps extends AnimatedKnotProps {
@@ -72,7 +72,7 @@ export const SheetBend: React.FC<SheetBendProps> = ({ frame, useAlternativeTying
                 }}
                 ropeMeshConfig={{
                     ...ropeMeshConfig,
-                    material: useRopeMaterial(new Vector2(2, 50), Texture.GREEN),
+                    material: useRopeMaterial(new Vector2(2, 50), whiteTexture),
                 }}
             />
 
@@ -88,7 +88,7 @@ export const SheetBend: React.FC<SheetBendProps> = ({ frame, useAlternativeTying
                 }}
                 ropeMeshConfig={{
                     ...ropeMeshConfig,
-                    material: useRopeMaterial(new Vector2(2, 50), Texture.BLUE),
+                    material: useRopeMaterial(new Vector2(2, 50), redTexture),
                 }}
             />
         </>

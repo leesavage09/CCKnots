@@ -2,7 +2,7 @@ import React from 'react'
 import { curves_0 } from './curves/roundTurn'
 import { AnimatedKnotProps, useRopeAnimation } from '../../hooks/useRopeAnimation'
 import { Euler, Vector2 } from 'three'
-import { Texture, useRopeMaterial } from '../../hooks/useRopeMaterial'
+import {  redTexture, useRopeMaterial } from '../../hooks/useRopeMaterial'
 import { Rope } from '../rope'
 import { useMetalMaterial } from '../../hooks/useMetalMaterial'
 
@@ -36,7 +36,7 @@ export const RoundTurn: React.FC<AnimatedKnotProps> = ({ frame }) => {
                     length: 90,
                     radialSegments: 32,
                     heightSegments: 400,
-                    material: useRopeMaterial(new Vector2(2, 100), Texture.RED),
+                    material: useRopeMaterial(new Vector2(2, 100), redTexture),
                 }}
             />
         </>
