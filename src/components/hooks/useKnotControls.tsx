@@ -16,9 +16,9 @@ type UseKnotControls = (description: JSX.Element) => {
 }
 
 export const useKnotControls: UseKnotControls = (description) => {
-    const [animationSlider, setAnimationSlider] = useState(0)
+    const [animationSlider, setAnimationSlider] = useState(100)
     const [drawOpen, setDrawOpen] = React.useState(false)
-    const [play, setPlay] = useState(true)
+    const [play, setPlay] = useState(false)
     useAnimationFrame((deltaTime: number) => setAnimationSlider(value => (value + deltaTime * 0.015)), play)
     const history = useHistory()
 
@@ -33,7 +33,7 @@ export const useKnotControls: UseKnotControls = (description) => {
                 <Box
                     sx={{ height: '100vh', padding: '10px' }}
                 >
-                    <IconButton aria-label="close" onClick={() => setDrawOpen(false)} sx={{float:'right'}}>
+                    <IconButton aria-label="close" onClick={() => setDrawOpen(false)} sx={{ float: 'right' }}>
                         <CloseIcon />
                     </IconButton>
                     {description}
@@ -55,6 +55,7 @@ export const useKnotControls: UseKnotControls = (description) => {
                 }}
             >
                 <Slider
+                    key={play ? Math.random() : 1}
                     sx={{ width: '90vw', display: 'flex', flexShrink: 1, marginBottom: 2 }}
                     aria-label="Animation"
                     step={0.001}
