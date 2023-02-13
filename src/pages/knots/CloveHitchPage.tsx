@@ -1,7 +1,7 @@
 import React from "react";
 import { Paper, Typography } from "@mui/material";
 import { CloveHitch } from "../../components/threejs/rope/knots/cloveHitch";
-import { KnotPage } from "../../components/knotPage";
+import { KnotPage } from "../../components/knotPageTemplate";
 
 const PaperP: React.FC<React.PropsWithChildren> = ({ children }) => <Paper sx={{ marginX: 1, marginY: 3, padding: 2 }}>{children}</Paper>
 

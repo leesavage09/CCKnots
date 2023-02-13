@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "@mui/material";
 import { RoundTurn } from "../../components/threejs/rope/knots/roundTurn";
-import { KnotPage } from "../../components/knotPage";
+import { KnotPage } from "../../components/knotPageTemplate";
 
 export const RoundTurnPage: React.FC = () => (
     <KnotPage

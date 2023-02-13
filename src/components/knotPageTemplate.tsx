@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { KnotScene } from "../components/knotScene";
-import { useKnotControls } from "../components/hooks/useKnotControls";
-import { AnimatedKnotProps } from "../components/threejs/hooks/useRopeAnimation";
+import { KnotScene } from "./knotScene";
+import { useKnotControls } from "./hooks/useKnotControls";
+import { AnimatedKnotProps } from "./threejs/hooks/useRopeAnimation";
 import { AppBar } from "./appBar";
 
 interface KnotPageProps {

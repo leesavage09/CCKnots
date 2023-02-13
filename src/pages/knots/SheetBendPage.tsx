@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "@mui/material";
 import { SheetBend } from "../../components/threejs/rope/knots/sheetBend";
-import { KnotPage } from "../../components/knotPage";
+import { KnotPage } from "../../components/knotPageTemplate";
 
 export const SheetBendPage: React.FC = () => (
     <KnotPage

@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "@mui/material";
 import { Bowline } from "../../components/threejs/rope/knots/bowline";
-import { KnotPage } from "../../components/knotPage";
+import { KnotPage } from "../../components/knotPageTemplate";
 
 export const BowlinePage: React.FC = () => (
     <KnotPage

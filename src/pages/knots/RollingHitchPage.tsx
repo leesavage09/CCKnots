@@ -1,6 +1,6 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import { KnotPage } from "../../components/knotPage";
+import { KnotPage } from "../../components/knotPageTemplate";
 import { RollingHitch } from "../../components/threejs/rope/knots/rollingHitch";
 
 export const RollingHitchPage: React.FC = () => (

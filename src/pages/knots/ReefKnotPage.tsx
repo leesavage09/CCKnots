@@ -1,7 +1,7 @@
 import React from "react";
 import { Typography } from "@mui/material";
 import { ReefKnot } from "../../components/threejs/rope/knots/reefKnot";
-import { KnotPage } from "../../components/knotPage";
+import { KnotPage } from "../../components/knotPageTemplate";
 
 export const ReefKnotPage: React.FC = () => (
     <KnotPage
