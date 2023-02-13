@@ -29,5 +29,10 @@ export const knots = [
         url: '/knots/doubleSheetBend',
         image: '/assets/knots/doubleSheetBend.png',
         description: 'Double Sheet Bend ...'
+    }, {
+        name: 'Figure-eight knot',
+        url: '/knots/fig8',
+        image: '/assets/knots/fig8.png',
+        description: 'Figure-eight knot ...'
     }
 ]
