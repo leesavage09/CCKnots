@@ -72,7 +72,7 @@ export const useKnotControls: UseKnotControls = (description) => {
                         width: '100%',
                     }}
                 >
-                    <Stack direction="row" spacing={2}>
+                    {/* <Stack direction="row" spacing={2}> */}
                         <Button
                             variant="contained"
                             disabled={animationSlider === 0}
@@ -99,14 +99,14 @@ export const useKnotControls: UseKnotControls = (description) => {
                         >
                             <SkipNextRoundedIcon />
                         </Button>
-                    </Stack>
+                    {/* </Stack>
                     <Button
                         variant="contained"
                         sx={{ padding: 0, borderRadius: 10, minWidth: 40 }}
                         onClick={() => setDrawOpen(true)}
                     >
                         <InfoOutlinedIcon />
-                    </Button>
+                    </Button> */}
 
                 </Box>
             </Box >
