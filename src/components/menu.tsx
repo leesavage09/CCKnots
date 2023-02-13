@@ -48,7 +48,7 @@ export const Menu: React.FC<MenuProps> = ({ open, onClose }) => {
                             <ListItemText primary="Home Page" />
                         </ListItemButton>
                     </ListItem >
-                    <ListItem key='Review' disablePadding>
+                    {/* <ListItem key='Review' disablePadding>
                         <ListItemButton>
                             <ListItemIcon><ReviewIcon /></ListItemIcon>
                             <ListItemText primary='Review' />
@@ -59,7 +59,7 @@ export const Menu: React.FC<MenuProps> = ({ open, onClose }) => {
                             <ListItemIcon><ShareIcon /></ListItemIcon>
                             <ListItemText primary='Share' />
                         </ListItemButton>
-                    </ListItem>
+                    </ListItem> */}
                 </List>
 
                 <Divider />
