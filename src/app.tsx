@@ -23,7 +23,7 @@ setupIonicReact();
 
 const App: React.FC = () => {
     const knotRoutes = knots.map((knot) => (
-        <Route exact path={knot.url}>
+        <Route key={knot.url} exact path={knot.url}>
             {knot.pageComponent}
         </Route>
     ))
