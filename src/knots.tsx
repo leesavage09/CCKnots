@@ -1,4 +1,11 @@
-import { BowlinePage, CloveHitchPage, DoubleSheetBendPage, Fig8Page, ReefKnotPage, RollingHitchPage, RoundTurnPage, SheetBendPage } from "./pages/knotPages";
+import { BowlinePage } from "./pages/knots/BowlinePage";
+import { CloveHitchPage } from "./pages/knots/CloveHitchPage";
+import { DoubleSheetBendPage } from "./pages/knots/DoubleSheetBendPage";
+import { Fig8Page } from "./pages/knots/Fig8Page";
+import { ReefKnotPage } from "./pages/knots/ReefKnotPage";
+import { RollingHitchPage } from "./pages/knots/RollingHitchPage";
+import { RoundTurnPage } from "./pages/knots/RoundTurnPage";
+import { SheetBendPage } from "./pages/knots/SheetBendPage";
 
 export const knots = [
     {

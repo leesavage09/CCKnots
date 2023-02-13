@@ -1,14 +1,7 @@
 import React from "react";
 import { Paper, Typography } from "@mui/material";
-import { CloveHitch } from "../components/threejs/rope/knots/cloveHitch";
-import { RoundTurn } from "../components/threejs/rope/knots/roundTurn";
-import { ReefKnot } from "../components/threejs/rope/knots/reefKnot";
-import { Bowline } from "../components/threejs/rope/knots/bowline";
-import { SheetBend } from "../components/threejs/rope/knots/sheetBend";
-import { DoubleSheetBend } from "../components/threejs/rope/knots/doubleSheetBend";
-import { KnotPage } from "../components/knotPage";
-import { fig8 } from "../components/threejs/rope/knots/fig8";
-import { RollingHitch } from "../components/threejs/rope/knots/rollingHitch";
+import { CloveHitch } from "../../components/threejs/rope/knots/cloveHitch";
+import { KnotPage } from "../../components/knotPage";
 
 const PaperP: React.FC<React.PropsWithChildren> = ({ children }) => <Paper sx={{ marginX: 1, marginY: 3, padding: 2 }}>{children}</Paper>
 
@@ -70,90 +63,6 @@ export const CloveHitchPage: React.FC = () => (
 
 
             </>
-        )}
-    />
-)
-
-export const RoundTurnPage: React.FC = () => (
-    <KnotPage
-        knot={RoundTurn}
-        cameraPos={[0, 10, 30]}
-        description={(
-            <Typography variant="h6" component="h5" gutterBottom>
-                Round Turn
-            </Typography>
-        )}
-    />
-)
-
-export const ReefKnotPage: React.FC = () => (
-    <KnotPage
-        knot={ReefKnot}
-        cameraPos={[0, 0, 50]}
-        description={(
-            <Typography variant="h6" component="h5" gutterBottom>
-                Reef Knot
-            </Typography>
-        )}
-    />
-)
-
-export const BowlinePage: React.FC = () => (
-    <KnotPage
-        knot={Bowline}
-        cameraPos={[0, 0, 70]}
-        description={(
-            <Typography variant="h6" component="h5" gutterBottom>
-                Bowline
-            </Typography>
-        )}
-    />
-)
-
-export const SheetBendPage: React.FC = () => (
-    <KnotPage
-        knot={SheetBend}
-        cameraPos={[0, 0, 50]}
-        description={(
-            <Typography variant="h6" component="h5" gutterBottom>
-                Sheet Bend
-            </Typography>
-        )}
-    />
-)
-
-export const DoubleSheetBendPage: React.FC = () => (
-    <KnotPage
-        knot={DoubleSheetBend}
-        cameraPos={[0, 0, 50]}
-        description={(
-            <Typography variant="h6" component="h5" gutterBottom>
-                Double Sheet Bend
-            </Typography>
-        )}
-    />
-)
-
-export const Fig8Page: React.FC = () => (
-    <KnotPage
-        knot={fig8}
-        cameraPos={[0, 0, 50]}
-        description={(
-            <Typography variant="h6" component="h5" gutterBottom>
-                Figure-eight knot
-            </Typography>
-        )}
-    />
-)
-
-export const RollingHitchPage: React.FC = () => (
-    <KnotPage
-        knot={RollingHitch}
-        cameraPos={[0, 0, 50]}
-        description={(
-            <Typography variant="h6" component="h5" gutterBottom>
-                Rolling Hitch
-            </Typography>
         )}
     />
 )
