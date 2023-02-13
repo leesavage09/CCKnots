@@ -2,7 +2,7 @@ import { Redirect, Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
 import { Home } from './pages/home';
-import { BowlinePage, CloveHitchPage, DoubleSheetBendPage, Fig8Page, ReefKnotPage, RoundTurnPage, SheetBendPage } from './pages/knotPages';
+import { BowlinePage, CloveHitchPage, DoubleSheetBendPage, Fig8Page, ReefKnotPage, RollingHitchPage, RoundTurnPage, SheetBendPage } from './pages/knotPages';
 
 /* Core CSS required for Ionic components to work properly */
 import '@ionic/react/css/core.css';
@@ -48,6 +48,9 @@ const App: React.FC = () => (
         </Route>
         <Route exact path="/knots/fig8">
           <Fig8Page />
+        </Route>
+        <Route exact path="/knots/rollingHitch">
+          <RollingHitchPage />
         </Route>
         <Route exact path="/">
           <Redirect to="/home" />

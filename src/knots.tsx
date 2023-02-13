@@ -34,5 +34,10 @@ export const knots = [
         url: '/knots/fig8',
         image: '/assets/knots/fig8.png',
         description: 'Figure-eight knot ...'
+    }, {
+        name: 'Rolling Hitch',
+        url: '/knots/rollingHitch',
+        image: '/assets/knots/rollingHitch.png',
+        description: 'Rolling Hitch ...'
     }
 ]

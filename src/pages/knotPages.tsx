@@ -8,6 +8,7 @@ import { SheetBend } from "../components/threejs/rope/knots/sheetBend";
 import { DoubleSheetBend } from "../components/threejs/rope/knots/doubleSheetBend";
 import { KnotPage } from "../components/knotPage";
 import { fig8 } from "../components/threejs/rope/knots/fig8";
+import { RollingHitch } from "../components/threejs/rope/knots/rollingHitch";
 
 const PaperP: React.FC<React.PropsWithChildren> = ({ children }) => <Paper sx={{ marginX: 1, marginY: 3, padding: 2 }}>{children}</Paper>
 
@@ -140,6 +141,18 @@ export const Fig8Page: React.FC = () => (
         description={(
             <Typography variant="h6" component="h5" gutterBottom>
                 Figure-eight knot
+            </Typography>
+        )}
+    />
+)
+
+export const RollingHitchPage: React.FC = () => (
+    <KnotPage
+        knot={RollingHitch}
+        cameraPos={[0, 0, 50]}
+        description={(
+            <Typography variant="h6" component="h5" gutterBottom>
+                Rolling Hitch
             </Typography>
         )}
     />
