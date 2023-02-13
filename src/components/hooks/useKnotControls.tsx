@@ -92,7 +92,10 @@ export const useKnotControls: UseKnotControls = (description) => {
                             variant="contained"
                             disabled={animationSlider === 100}
                             sx={{ borderRadius: 10 }}
-                            onClick={() => setAnimationSlider(100)}
+                            onClick={() => {
+                                setPlay(false)
+                                setAnimationSlider(100)}
+                            }
                         >
                             <SkipNextRoundedIcon />
                         </Button>
