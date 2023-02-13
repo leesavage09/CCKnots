@@ -42,6 +42,12 @@ export const Menu: React.FC<MenuProps> = ({ open, onClose }) => {
                 onKeyDown={onClose}
             >
                 <List>
+                    <ListItem key='allKnots' disablePadding>
+                        <ListItemButton onClick={() => history.push('/')}>
+                            <ListItemIcon><HomeIcon /></ListItemIcon>
+                            <ListItemText primary="Home Page" />
+                        </ListItemButton>
+                    </ListItem >
                     <ListItem key='Review' disablePadding>
                         <ListItemButton>
                             <ListItemIcon><ReviewIcon /></ListItemIcon>
@@ -55,6 +61,7 @@ export const Menu: React.FC<MenuProps> = ({ open, onClose }) => {
                         </ListItemButton>
                     </ListItem>
                 </List>
+
                 <Divider />
 
                 <List
@@ -64,12 +71,6 @@ export const Menu: React.FC<MenuProps> = ({ open, onClose }) => {
                         </ListSubheader>
                     }
                 >
-                    <ListItem key='allKnots' disablePadding>
-                        <ListItemButton onClick={() => history.push('/')}>
-                            <ListItemIcon><HomeIcon /></ListItemIcon>
-                            <ListItemText primary="All Knots..." />
-                        </ListItemButton>
-                    </ListItem >
                     {listOfKnots}
                 </List>
             </Box>
