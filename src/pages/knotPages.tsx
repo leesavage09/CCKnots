@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider, Paper, Typography } from "@mui/material";
+import { Paper, Typography } from "@mui/material";
 import { CloveHitch } from "../components/threejs/rope/knots/cloveHitch";
 import { RoundTurn } from "../components/threejs/rope/knots/roundTurn";
 import { ReefKnot } from "../components/threejs/rope/knots/reefKnot";
