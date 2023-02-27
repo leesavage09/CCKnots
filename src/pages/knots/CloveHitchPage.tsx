@@ -1,9 +1,7 @@
 import React from "react";
-import { Paper, Typography } from "@mui/material";
+import { Typography } from "@mui/material";
 import { CloveHitch } from "../../components/threejs/rope/knots/cloveHitch";
-import { KnotPage } from "../../components/knotPageTemplate";
-
-const PaperP: React.FC<React.PropsWithChildren> = ({ children }) => <Paper sx={{ marginX: 1, marginY: 3, padding: 2 }}>{children}</Paper>
+import { KnotPage, PaperP } from "../../components/knotPageTemplate";
 
 export const CloveHitchPage: React.FC = () => (
     <KnotPage
@@ -15,16 +13,39 @@ export const CloveHitchPage: React.FC = () => (
                 <Typography variant="h6" component="h5" gutterBottom>Clove Hitch</Typography>
 
                 <PaperP>
-                    <Typography variant="subtitle2" component="h6" gutterBottom>Other Names</Typography>
+                    <Typography variant="subtitle2" component="h6" gutterBottom>How to tie a clove hitch</Typography>
                     <Typography variant="body1" component="p" gutterBottom>
-                        builder's knot or a ratline hitch
+                        <p>
+                        When learning to tie the clove hitch, it might help to keep the following sentence in mind “A pirate goes around the world, crosses his path and goes around the world again. He digs for treasure at the X-mark”. 
+                        </p>
+                        <ul>
+                            <li>The pirate is the end of the rope. He travels once around the object you want to tie the clove hitch to.</li>
+                            <li>Once the pirate (the end of the rope) has traveled around the object once, he crosses over his own path to the other side of the rope.</li>
+                            <li>Then he travels around the world (the object) one more time in the same direction.</li>
+                            <li>After the pirate travels around the world the second time, he comes across the X-mark and starts digging for his treasure. So, the pirate goes underneath the rope.</li>
+                            <li>To tighten the knot, pull the rope on both sides of the knot away from each other. </li>
+                        </ul>
+                    </Typography>
+                </PaperP>
+
+
+                <PaperP>
+                    <Typography variant="subtitle2" component="h6" gutterBottom>How to tie a clove hitch 2</Typography>
+                    <Typography variant="body1" component="p" gutterBottom>
+                        <ul>
+                            <li>Lay the rope over the bar you wish to tie the clove hitch on.</li>
+                            <li>Bring the working end around the bar and let it cross over the standing end of the rope.</li>
+                            <li>Bring the working end around the bar one more time, keeping it on the same side of the standing end of the rope. </li>
+                            <li>Pass the working end underneath the hitch on the bar, parallel to the standing end.</li>
+                            <li>To tighten the knot, pull the standing end and working end away from each other.</li>
+                        </ul>
                     </Typography>
                 </PaperP>
 
                 <PaperP>
                     <Typography variant="subtitle2" component="h6" gutterBottom>Usage In Sailing</Typography>
                     <Typography variant="body1" component="p" gutterBottom>
-                        The clove hitch is used most commonly to tie your fenders onto your boat. It is easy adjustable, since feeding in rope from either direction will loosen the knot to be tightened at a new position.
+                    The clove hitch is an ideal knot to tie fenders to the guard rails, as it is easy to adjust the height afterwards.
                     </Typography>
                 </PaperP>
 
@@ -33,31 +54,24 @@ export const CloveHitchPage: React.FC = () => (
                 <PaperP>
                     <Typography variant="subtitle2" component="h6" gutterBottom>Structure</Typography>
                     <Typography variant="body1" component="p" gutterBottom>
-                        The clove hitch is identical to the Two half hitches, The clove hitch is tied around an object rather than the standing end of the rope, unlike the Two half hitches
+                    The structure of the clove hitch is identical to the two half hitches. The only difference is that the clove hitch is tied around a post or ring, rather than the standing end of the rope.
                     </Typography>
                 </PaperP>
 
                 <PaperP>
-                    <Typography variant="subtitle2" component="h6" gutterBottom>Character</Typography>
+                    <Typography variant="subtitle2" component="h6" gutterBottom>Reliability</Typography>
                     <Typography variant="body1" component="p" gutterBottom>
-                        When both ends of the clove hitch are under tension it is very secure however as is typically the case in its most common usage in sailing 'tiing on fenders' one end is loose, this can lead to slipage and a lost fender. Half hitches can be added to secure the knot from slippage.
-
-                        Adjusting the knot is very easy as one end can be slipped and the tention taken up on the other end. This is typacly used to higer and lower fenders
+                    When both ends of the clove hitch are under tension, it is a very reliable knot. When only one end is under tension, the knot has a tendency to slip. To avoid slipping, you can tie a half hitch in the loose end.
                     </Typography>
                 </PaperP>
 
                 <PaperP>
-                    <Typography variant="subtitle2" component="h6" gutterBottom>Other usage</Typography>
+                    <Typography variant="subtitle2" component="h6" gutterBottom>Historical facts</Typography>
                     <Typography variant="body1" component="p" gutterBottom>
-                        This knot is particularly useful where the length of the running end needs to be adjustable, since feeding in rope from either direction will loosen the knot to be tightened at a new position. With certain types of cord, the clove hitch can slip when loaded. In modern climbing rope, the clove hitch will slip to a point, and then stop slipping.[5] When tied around a carabiner, the load should pull on the end closest to its spine.[6] With smaller diameter cords, after being heavily weighted it may become difficult to untie. It is also unreliable when used on a square or rectangular post, rather than round.
-                        The clove hitch is also commonly used in pioneering to start and finish a lashing such as the traditional square lashing, tripod lashing, round lashing and shear lashing.[7]
-                    </Typography>
-                </PaperP>
-
-                <PaperP>
-                    <Typography variant="subtitle2" component="h6" gutterBottom>History</Typography>
-                    <Typography variant="body1" component="p" gutterBottom>
-                        Although the name clove hitch is given by Falconer in his Dictionary of 1769, the knot is much older, having been tied in ratlines at least as early as the first quarter of the sixteenth century. This is shown in early sculpture and paintings. A round turn is taken with the ratline and then a hitch is added below. The forward end is always the first to be made fast.
+                        <ul>
+                            <li>The clove hitch is already seen in artwork from the 16th century to tie ratlines.</li>
+                            <li>The knot is first named in the Falconer’s Universal Dictionary of the Marine, which dates back to 1769.</li>
+                        </ul>
                     </Typography>
                 </PaperP>
             </>

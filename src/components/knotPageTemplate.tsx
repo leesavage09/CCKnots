@@ -3,6 +3,9 @@ import { KnotScene } from "./knotScene";
 import { useKnotControls } from "./hooks/useKnotControls";
 import { AnimatedKnotProps } from "./threejs/hooks/useRopeAnimation";
 import { AppBar } from "./appBar";
+import { Paper } from "@mui/material";
+
+export const PaperP: React.FC<React.PropsWithChildren> = ({ children }) => <Paper sx={{ marginX: 1, marginY: 3, padding: 2 }}>{children}</Paper>
 
 interface KnotPageProps {
     knot: React.FC<AnimatedKnotProps>,
