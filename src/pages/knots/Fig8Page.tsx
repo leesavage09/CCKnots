@@ -7,6 +7,7 @@ export const Fig8Page: React.FC = () => (
     <KnotPage
         knot={fig8}
         cameraPos={[0, 0, 50]}
+        title='Figure-eight knot'
         description={(
             <Typography variant="h6" component="h5" gutterBottom>
                 Figure-eight knot

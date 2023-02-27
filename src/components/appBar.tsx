@@ -7,7 +7,7 @@ import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Menu } from './menu';
 
-export const AppBar = () => {
+export const AppBar = ({title = 'Sailing Knots 3D'}) => {
   const [open, setOpen] = useState(false)
 
   return (
@@ -26,7 +26,7 @@ export const AppBar = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="h1">
-            Sailing Knots 3D
+            {title}
             </Typography>
           </Toolbar>
         </MuiAppBar>

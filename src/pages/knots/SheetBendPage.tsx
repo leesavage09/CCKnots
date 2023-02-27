@@ -7,6 +7,7 @@ export const SheetBendPage: React.FC = () => (
     <KnotPage
         knot={SheetBend}
         cameraPos={[0, 0, 50]}
+        title='Sheet Bend'
         description={(
             <Typography variant="h6" component="h5" gutterBottom>
                 Sheet Bend

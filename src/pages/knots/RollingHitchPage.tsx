@@ -7,6 +7,7 @@ export const RollingHitchPage: React.FC = () => (
     <KnotPage
         knot={RollingHitch}
         cameraPos={[0, 0, 50]}
+        title='Rolling Hitch'
         description={(
             <Typography variant="h6" component="h5" gutterBottom>
                 Rolling Hitch

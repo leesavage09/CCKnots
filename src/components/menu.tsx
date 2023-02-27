@@ -45,7 +45,7 @@ export const Menu: React.FC<MenuProps> = ({ open, onClose }) => {
                     <ListItem key='allKnots' disablePadding>
                         <ListItemButton onClick={() => history.push('/')}>
                             <ListItemIcon><HomeIcon /></ListItemIcon>
-                            <ListItemText primary="Home Page" />
+                            <ListItemText primary="All knots" />
                         </ListItemButton>
                     </ListItem >
                     {/* <ListItem key='Review' disablePadding>

@@ -9,6 +9,7 @@ export const CloveHitchPage: React.FC = () => (
     <KnotPage
         knot={CloveHitch}
         cameraPos={[0, 0, 30]}
+        title='Clove Hitch'
         description={(
             <>
                 <Typography variant="h6" component="h5" gutterBottom>Clove Hitch</Typography>
@@ -59,9 +60,6 @@ export const CloveHitchPage: React.FC = () => (
                         Although the name clove hitch is given by Falconer in his Dictionary of 1769, the knot is much older, having been tied in ratlines at least as early as the first quarter of the sixteenth century. This is shown in early sculpture and paintings. A round turn is taken with the ratline and then a hitch is added below. The forward end is always the first to be made fast.
                     </Typography>
                 </PaperP>
-
-
-
             </>
         )}
     />

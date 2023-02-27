@@ -7,6 +7,7 @@ export const RoundTurnPage: React.FC = () => (
     <KnotPage
         knot={RoundTurn}
         cameraPos={[0, 10, 30]}
+        title='Round Turn'
         description={(
             <Typography variant="h6" component="h5" gutterBottom>
                 Round Turn

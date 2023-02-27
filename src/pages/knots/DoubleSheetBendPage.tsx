@@ -7,6 +7,7 @@ export const DoubleSheetBendPage: React.FC = () => (
     <KnotPage
         knot={DoubleSheetBend}
         cameraPos={[0, 0, 50]}
+        title='Double Sheet Bend'
         description={(
             <Typography variant="h6" component="h5" gutterBottom>
                 Double Sheet Bend

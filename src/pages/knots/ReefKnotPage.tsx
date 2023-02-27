@@ -7,6 +7,7 @@ export const ReefKnotPage: React.FC = () => (
     <KnotPage
         knot={ReefKnot}
         cameraPos={[0, 0, 50]}
+        title='Reef Knot'
         description={(
             <Typography variant="h6" component="h5" gutterBottom>
                 Reef Knot
