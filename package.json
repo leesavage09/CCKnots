@@ -1,5 +1,5 @@
 {
-  "name": "CCknots",
+  "name": "sailingknots3d",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -46,7 +46,6 @@
     "workbox-streams": "^5.1.4"
   },
   "devDependencies": {
-    "typescript": "^4.1.3",
     "@capacitor/cli": "4.4.0",
     "@types/jest": "^26.0.20",
     "@types/node": "^12.19.15",
@@ -54,7 +53,8 @@
     "@types/react-dom": "^18.0.6",
     "@types/react-router": "^5.1.11",
     "@types/react-router-dom": "^5.1.7",
-    "@types/three": "^0.144.0"
+    "@types/three": "^0.144.0",
+    "typescript": "^4.1.3"
   },
   "browserslist": {
     "production": [

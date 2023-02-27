@@ -1,4 +1,4 @@
-package io.ionic.starter;
+package uk.co.leesavage.sailingknots3d;
 
 import com.getcapacitor.BridgeActivity;
 

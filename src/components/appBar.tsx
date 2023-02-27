@@ -26,7 +26,7 @@ export const AppBar = () => {
               <MenuIcon />
             </IconButton>
             <Typography variant="h6" component="h1">
-              CCKnots
+            Sailing Knots 3D
             </Typography>
           </Toolbar>
         </MuiAppBar>

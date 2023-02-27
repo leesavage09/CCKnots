@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='utf-8'?>
 <resources>
-    <string name="app_name">CCknots</string>
-    <string name="title_activity_main">CCknots</string>
-    <string name="package_name">io.ionic.starter</string>
-    <string name="custom_url_scheme">io.ionic.starter</string>
+    <string name="app_name">sailingknots3d</string>
+    <string name="title_activity_main">sailingknots3d</string>
+    <string name="package_name">uk.co.leesavage.sailingknots3d</string>
+    <string name="custom_url_scheme">uk.co.leesavage.sailingknots3d</string>
 </resources>
