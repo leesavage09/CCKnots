@@ -12,15 +12,13 @@ export const SheetBendPage: React.FC = () => (
             <>
             <PaperP>
                 <Typography variant="subtitle2" component="h6" gutterBottom>How to tie a sheet bend</Typography>
-                <Typography variant="body1" component="p" gutterBottom>
-                    <ul>
-                        <li>Form a bight with the thickest line. If both loops have the same diameter, you can choose either line. Hold the bight together in your hand, we call this line A. </li>
-                        <li>Pull the end of the other line (line B) through the loop, coming towards you. </li>
-                        <li>Wrap line B under both parts of the bight, formed by line A.</li>
-                        <li>Pull the end of line B under itself where it came out of the loop originally.</li>
-                        <li>To tighten the knot, keep the bight in your one hand. With your other hand you pull the end of line B in the opposite direction.</li>
-                    </ul>
-                </Typography>
+                <ul>
+                    <li>Form a bight with the thickest line. If both loops have the same diameter, you can choose either line. Hold the bight together in your hand, we call this line A. </li>
+                    <li>Pull the end of the other line (line B) through the loop, coming towards you. </li>
+                    <li>Wrap line B under both parts of the bight, formed by line A.</li>
+                    <li>Pull the end of line B under itself where it came out of the loop originally.</li>
+                    <li>To tighten the knot, keep the bight in your one hand. With your other hand you pull the end of line B in the opposite direction.</li>
+                </ul>
             </PaperP>
 
             <PaperP>
@@ -46,11 +44,9 @@ export const SheetBendPage: React.FC = () => (
 
             <PaperP>
                 <Typography variant="subtitle2" component="h6" gutterBottom>Historical facts</Typography>
-                <Typography variant="body1" component="p" gutterBottom>
-                    <ul>
-                        <li>The knot is widely used in textile mills throughout history, hence also known as the weaver’s knot. However, weavers tend to tie it in a variety of ways.</li>
-                    </ul>
-                </Typography>
+                <ul>
+                    <li>The knot is widely used in textile mills throughout history, hence also known as the weaver’s knot. However, weavers tend to tie it in a variety of ways.</li>
+                </ul>
             </PaperP>
         </>
         )}

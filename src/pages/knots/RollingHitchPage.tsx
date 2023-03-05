@@ -15,15 +15,13 @@ export const RollingHitchPage: React.FC = () => (
                 <Typography variant="body1" component="p" gutterBottom>
                 
                 </Typography>
-                <Typography variant="body1" component="p" gutterBottom>
-                    <ul>
-                        <li>Start by making a turn around the object and cross over the standing end of the line.</li>
-                        <li>Make at least one more wrap around the object, following exactly the same path as the first wrap. So, the standing end of the line will be covered underneath the wraps.</li>
-                        <li>Optional: Make more wraps in the same direction. </li>
-                        <li>Finish the knot by tying a half hitch</li>
-                        <li>For security, tie an extra half hitch, so the knot finished with a clove hitch.</li>
-                    </ul>
-                </Typography>
+                <ul>
+                    <li>Start by making a turn around the object and cross over the standing end of the line.</li>
+                    <li>Make at least one more wrap around the object, following exactly the same path as the first wrap. So, the standing end of the line will be covered underneath the wraps.</li>
+                    <li>Optional: Make more wraps in the same direction. </li>
+                    <li>Finish the knot by tying a half hitch</li>
+                    <li>For security, tie an extra half hitch, so the knot finished with a clove hitch.</li>
+                </ul>
             </PaperP>
 
             <PaperP>
@@ -56,12 +54,10 @@ export const RollingHitchPage: React.FC = () => (
 
             <PaperP>
                 <Typography variant="subtitle2" component="h6" gutterBottom>Historical facts</Typography>
-                <Typography variant="body1" component="p" gutterBottom>
-                    <ul>
-                        <li>The knot dates back to the late 18th century, when it was commonly known under the name Magnus Hitch or Magner’s Hitch.</li>
-                        <li>In 1841 the book Seaman’s Friend was published and used the name rolling hitch for the knot. Ever since, the rolling hitch is known under this name. </li>
-                    </ul>
-                </Typography>
+                <ul>
+                    <li>The knot dates back to the late 18th century, when it was commonly known under the name Magnus Hitch or Magner’s Hitch.</li>
+                    <li>In 1841 the book Seaman’s Friend was published and used the name rolling hitch for the knot. Ever since, the rolling hitch is known under this name. </li>
+                </ul>
             </PaperP>
         </>
         )}

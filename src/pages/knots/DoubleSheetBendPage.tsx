@@ -12,16 +12,14 @@ export const DoubleSheetBendPage: React.FC = () => (
             <>
             <PaperP>
                 <Typography variant="subtitle2" component="h6" gutterBottom>How to tie a double sheet bend</Typography>
-                <Typography variant="body1" component="p" gutterBottom>
-                    <ul>
-                        <li>Form a bight with the thickest line. If both loops have the same diameter, you can choose either line. Hold the bight together in your hand, we call this line A. </li>
-                        <li>Pull the end of the other line (line B) through the loop, coming towards you. </li>
-                        <li>Wrap line B under both parts of the bight, formed by line A.</li>
-                        <li>Pull the end of line B under itself where it came out of the loop originally.</li>
-                        <li>Wrap line B around both parts of the bight again, towards the closed end of the bight and tuck it under itself again. </li>
-                        <li>To tighten the knot, keep the bight in your one hand. With your other hand you pull the end of line B in the opposite direction.</li>
-                    </ul>
-                </Typography>
+                <ul>
+                    <li>Form a bight with the thickest line. If both loops have the same diameter, you can choose either line. Hold the bight together in your hand, we call this line A. </li>
+                    <li>Pull the end of the other line (line B) through the loop, coming towards you. </li>
+                    <li>Wrap line B under both parts of the bight, formed by line A.</li>
+                    <li>Pull the end of line B under itself where it came out of the loop originally.</li>
+                    <li>Wrap line B around both parts of the bight again, towards the closed end of the bight and tuck it under itself again. </li>
+                    <li>To tighten the knot, keep the bight in your one hand. With your other hand you pull the end of line B in the opposite direction.</li>
+                </ul>
             </PaperP>
 
             <PaperP>

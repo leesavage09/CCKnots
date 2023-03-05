@@ -16,14 +16,12 @@ export const ReefKnotPage: React.FC = () => {
                         <Typography variant="body1" component="p" gutterBottom>
                         An easy rhyme to remember how to tie the reef knot is “Left over right and right over left”.
                         </Typography>
-                        <Typography variant="body1" component="p" gutterBottom>
-                            <ul>
-                                <li>Hold the ends of two ropes. One rope in one hand and one rope in your other hand.</li>
-                                <li>Pass the left rope over and behind the right rope, so that you hold both ends in your other hand.</li>
-                                <li>Now pass the rope that is in your right hand over and behind the left hand rope. </li>
-                                <li>To tighten the knot, you hold the working and standing end of the left rope in your left hand and the working and standing end of the right rope in your right hand. Then you pull your hands away from each other. </li>
-                            </ul>
-                        </Typography>
+                        <ul>
+                            <li>Hold the ends of two ropes. One rope in one hand and one rope in your other hand.</li>
+                            <li>Pass the left rope over and behind the right rope, so that you hold both ends in your other hand.</li>
+                            <li>Now pass the rope that is in your right hand over and behind the left hand rope. </li>
+                            <li>To tighten the knot, you hold the working and standing end of the left rope in your left hand and the working and standing end of the right rope in your right hand. Then you pull your hands away from each other. </li>
+                        </ul>
                     </PaperP>
 
                     <PaperP>
@@ -56,12 +54,10 @@ export const ReefKnotPage: React.FC = () => {
 
                     <PaperP>
                         <Typography variant="subtitle2" component="h6" gutterBottom>Historical facts</Typography>
-                        <Typography variant="body1" component="p" gutterBottom>
-                            <ul>
-                                <li>The first known usage of the reef knot dates back over 4000 years. It was used by the Greeks to tie bandages. They called it the Hercules knot and it was believed that the knot helped to heal wounds faster. </li>
-                                <li>In 1794, it was first called the reef knot, as it was used by sailors to reef sails. </li>
-                            </ul>
-                        </Typography>
+                        <ul>
+                            <li>The first known usage of the reef knot dates back over 4000 years. It was used by the Greeks to tie bandages. They called it the Hercules knot and it was believed that the knot helped to heal wounds faster. </li>
+                            <li>In 1794, it was first called the reef knot, as it was used by sailors to reef sails. </li>
+                        </ul>
                     </PaperP>
                 </>
             )} />

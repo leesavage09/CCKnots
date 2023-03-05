@@ -12,14 +12,12 @@ export const Fig8Page: React.FC = () => (
             <>
             <PaperP>
                 <Typography variant="subtitle2" component="h6" gutterBottom>How to tie a figure of eight</Typography>
-                <Typography variant="body1" component="p" gutterBottom>
-                    <ul>
-                        <li>Take a bight close to the end of the rope.</li>
-                        <li>Take the loose/working end of the rope in front and across the standing end of the rope.</li>
-                        <li>Bring the working end all the way around the standing end and poke it through the eye which has been created.</li>
-                        <li>To tie the knot, you pull the working end and standing end of the rope away from each other.</li>
-                    </ul>
-                </Typography>
+                <ul>
+                    <li>Take a bight close to the end of the rope.</li>
+                    <li>Take the loose/working end of the rope in front and across the standing end of the rope.</li>
+                    <li>Bring the working end all the way around the standing end and poke it through the eye which has been created.</li>
+                    <li>To tie the knot, you pull the working end and standing end of the rope away from each other.</li>
+                </ul>
             </PaperP>
 
             <PaperP>
@@ -45,12 +43,10 @@ export const Fig8Page: React.FC = () => (
 
             <PaperP>
                 <Typography variant="subtitle2" component="h6" gutterBottom>Historical facts</Typography>
-                <Typography variant="body1" component="p" gutterBottom>
-                    <ul>
-                        <li>The figure of eight knot was first used on sailing boats, as a basic stopper knot.</li>
-                        <li>The knot is first recorded in the book “Sheet Anchor”, published in 1808. </li>
-                    </ul>
-                </Typography>
+                <ul>
+                    <li>The figure of eight knot was first used on sailing boats, as a basic stopper knot.</li>
+                    <li>The knot is first recorded in the book “Sheet Anchor”, published in 1808. </li>
+                </ul>
             </PaperP>
         </>
         )}

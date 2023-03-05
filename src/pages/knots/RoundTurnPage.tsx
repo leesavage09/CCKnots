@@ -12,14 +12,12 @@ export const RoundTurnPage: React.FC = () => (
             <>
             <PaperP>
                 <Typography variant="subtitle2" component="h6" gutterBottom>How to tie a round turn and two half hitches</Typography>
-                <Typography variant="body1" component="p" gutterBottom>
-                    <ul>
-                        <li>Turn the working end of the rope two times around the object. </li>
-                        <li>Start making the half hitches by bringing the working end of the rope around the standing end of the rope.</li>
-                        <li>Pass the working end behind the standing end and pull it through the gap created between the rope. Pull tight as this is the first half hitch.</li>
-                        <li>Repeat step 3 by bringing the working end of the rope around the standing end of the rope and through the gap. Pull tight to finish the knot. </li>
-                    </ul>
-                </Typography>
+                <ul>
+                    <li>Turn the working end of the rope two times around the object. </li>
+                    <li>Start making the half hitches by bringing the working end of the rope around the standing end of the rope.</li>
+                    <li>Pass the working end behind the standing end and pull it through the gap created between the rope. Pull tight as this is the first half hitch.</li>
+                    <li>Repeat step 3 by bringing the working end of the rope around the standing end of the rope and through the gap. Pull tight to finish the knot. </li>
+                </ul>
             </PaperP>
 
             <PaperP>
@@ -52,11 +50,9 @@ export const RoundTurnPage: React.FC = () => (
 
             <PaperP>
                 <Typography variant="subtitle2" component="h6" gutterBottom>Historical facts</Typography>
-                <Typography variant="body1" component="p" gutterBottom>
-                    <ul>
-                        <li>The round turn and two half hitches was traditionally used for holding mooring lines.</li>
-                    </ul>
-                </Typography>
+                <ul>
+                    <li>The round turn and two half hitches was traditionally used for holding mooring lines.</li>
+                </ul>
             </PaperP>
         </>
         )}

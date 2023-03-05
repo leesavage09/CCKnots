@@ -14,18 +14,16 @@ export const BowlinePage: React.FC = () => {
                     <PaperP>
                         <Typography variant="subtitle2" component="h6" gutterBottom>How to tie a bowline</Typography>
                         <Typography variant="body1" component="p" gutterBottom>
-                            <p>
                             A well known sentence to remember how to tie a bowline knot is “The rabbit comes up the hole, runs around the tree, and goes back down the hole.” But how does that work in practice?
-                            </p>
-                            <ul>
-                                <li>Hold the standing end of the line (the end that doesn’t move) in your left hand. This will be the tree if you use the verse to remember the knot. Keep the running end in your right hand. The running end is the rabbit. </li>
-                                <li>Make a loop by crossing the running end of the line over the standing end of the line. Make the loop as big as you need it to be. This loop is the so-called rabbit hole.</li>
-                                <li>The rabbit now comes up the hole. This means the running end of the line goes through the loop, moving towards you. </li>
-                                <li>From there, the rabbit runs around the tree. So, move the running end of the line behind the standing end of the line so that it ends up on the other side.</li>
-                                <li>To finish the knot, the rabbit goes down the hole. So, the running end of the line goes through the loop again.</li>
-                                <li>To tighten the knot, pull both ends of the line in opposite directions.</li>
-                            </ul>
                         </Typography>
+                        <ul>
+                            <li>Hold the standing end of the line (the end that doesn’t move) in your left hand. This will be the tree if you use the verse to remember the knot. Keep the running end in your right hand. The running end is the rabbit. </li>
+                            <li>Make a loop by crossing the running end of the line over the standing end of the line. Make the loop as big as you need it to be. This loop is the so-called rabbit hole.</li>
+                            <li>The rabbit now comes up the hole. This means the running end of the line goes through the loop, moving towards you. </li>
+                            <li>From there, the rabbit runs around the tree. So, move the running end of the line behind the standing end of the line so that it ends up on the other side.</li>
+                            <li>To finish the knot, the rabbit goes down the hole. So, the running end of the line goes through the loop again.</li>
+                            <li>To tighten the knot, pull both ends of the line in opposite directions.</li>
+                        </ul>
                     </PaperP>
 
                     <PaperP>
@@ -64,12 +62,10 @@ export const BowlinePage: React.FC = () => {
 
                     <PaperP>
                         <Typography variant="subtitle2" component="h6" gutterBottom>Historical facts</Typography>
-                        <Typography variant="body1" component="p" gutterBottom>
-                            <ul>
-                                <li>The bowline knot was used on the solar ship of Egyptian Pharoah Khufu. This ship is believed to be around 2500 years old.</li>
-                                <li>As far as we are aware, the bowline knot was first mentioned in John Smith’s work A Sea Grammer. This book was published in 1691.</li>
-                            </ul>
-                        </Typography>
+                        <ul>
+                            <li>The bowline knot was used on the solar ship of Egyptian Pharoah Khufu. This ship is believed to be around 2500 years old.</li>
+                            <li>As far as we are aware, the bowline knot was first mentioned in John Smith’s work A Sea Grammer. This book was published in 1691.</li>
+                        </ul>
                     </PaperP>
                 </>
             )} />
