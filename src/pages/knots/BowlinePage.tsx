@@ -104,8 +104,8 @@ export const BowlinePage: React.FC = () => {
               When tied correctly, the bowline knot is considered a reliable
               knot. Under tension, the knot will unlikely come undone. Not under
               tension, the bowline knot has a tendency to work loose. This also
-              means that it is fairly easy to untie a bowline when you take the
-              load off.
+              means that it is fairly easy to untie a bowline when you take off the
+              load.
             </Typography>
             <Typography variant="body1" component="p" gutterBottom>
               A rope with a bowline retains approximately 65% of its strength at

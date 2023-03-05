@@ -16,7 +16,7 @@ export const RoundTurnPage: React.FC = () => (
           </Typography>
           <ul>
             <li>
-              Turn the working end of the rope two times around the object.{" "}
+              Turn the working end of the rope two times around the object.
             </li>
             <li>
               Start making the half hitches by bringing the working end of the
@@ -30,7 +30,7 @@ export const RoundTurnPage: React.FC = () => (
             <li>
               Repeat step 3 by bringing the working end of the rope around the
               standing end of the rope and through the gap. Pull tight to finish
-              the knot.{" "}
+              the knot.
             </li>
           </ul>
         </PaperP>

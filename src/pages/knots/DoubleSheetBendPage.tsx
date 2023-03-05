@@ -18,11 +18,11 @@ export const DoubleSheetBendPage: React.FC = () => (
             <li>
               Form a bight with the thickest line. If both loops have the same
               diameter, you can choose either line. Hold the bight together in
-              your hand, we call this line A.{" "}
+              your hand, we call this line A.
             </li>
             <li>
               Pull the end of the other line (line B) through the loop, coming
-              towards you.{" "}
+              towards you.
             </li>
             <li>
               Wrap line B under both parts of the bight, formed by line A.
@@ -33,7 +33,7 @@ export const DoubleSheetBendPage: React.FC = () => (
             </li>
             <li>
               Wrap line B around both parts of the bight again, towards the
-              closed end of the bight and tuck it under itself again.{" "}
+              closed end of the bight and tuck it under itself again.
             </li>
             <li>
               To tighten the knot, keep the bight in your one hand. With your

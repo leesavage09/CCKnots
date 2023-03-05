@@ -100,7 +100,7 @@ export const RollingHitchPage: React.FC = () => (
             <li>
               In 1841 the book Seaman’s Friend was published and used the name
               rolling hitch for the knot. Ever since, the rolling hitch is known
-              under this name.{" "}
+              under this name.
             </li>
           </ul>
         </PaperP>

@@ -78,7 +78,7 @@ export const Fig8Page: React.FC = () => (
             </li>
             <li>
               The knot is first recorded in the book “Sheet Anchor”, published
-              in 1808.{" "}
+              in 1808.
             </li>
           </ul>
         </PaperP>

@@ -30,13 +30,13 @@ export const ReefKnotPage: React.FC = () => {
               </li>
               <li>
                 Now pass the rope that is in your right hand over and behind the
-                left hand rope.{" "}
+                left hand rope.
               </li>
               <li>
                 To tighten the knot, you hold the working and standing end of
                 the left rope in your left hand and the working and standing end
                 of the right rope in your right hand. Then you pull your hands
-                away from each other.{" "}
+                away from each other.
               </li>
             </ul>
           </PaperP>
@@ -94,11 +94,11 @@ export const ReefKnotPage: React.FC = () => {
                 The first known usage of the reef knot dates back over 4000
                 years. It was used by the Greeks to tie bandages. They called it
                 the Hercules knot and it was believed that the knot helped to
-                heal wounds faster.{" "}
+                heal wounds faster.
               </li>
               <li>
                 In 1794, it was first called the reef knot, as it was used by
-                sailors to reef sails.{" "}
+                sailors to reef sails.
               </li>
             </ul>
           </PaperP>
