@@ -10,8 +10,6 @@ export const Fig8Page: React.FC = () => (
         title='Figure-eight knot'
         description={(
             <>
-            <Typography variant="h6" component="h5" gutterBottom>Figure of eight</Typography>
-
             <PaperP>
                 <Typography variant="subtitle2" component="h6" gutterBottom>How to tie a figure of eight</Typography>
                 <Typography variant="body1" component="p" gutterBottom>

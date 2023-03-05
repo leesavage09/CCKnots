@@ -11,8 +11,6 @@ export const ReefKnotPage: React.FC = () => {
             title='Reef Knot'
             description={(
                 <>
-                    <Typography variant="h6" component="h5" gutterBottom>Reef knot</Typography>
-
                     <PaperP>
                         <Typography variant="subtitle2" component="h6" gutterBottom>How to tie a reef knot</Typography>
                         <Typography variant="body1" component="p" gutterBottom>

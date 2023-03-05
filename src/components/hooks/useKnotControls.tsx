@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router";
-import { Box, Button, Drawer, IconButton, Slider, Stack } from "@mui/material";
+import { Box, Button, Container, Drawer, IconButton, Paper, Slider, Stack, Typography } from "@mui/material";
 import SkipPreviousRoundedIcon from '@mui/icons-material/SkipPreviousRounded';
 import PlayArrowRoundedIcon from '@mui/icons-material/PlayArrowRounded';
 import PauseRoundedIcon from '@mui/icons-material/PauseRounded';
@@ -8,14 +8,15 @@ import InfoOutlinedIcon from '@mui/icons-material/InfoOutlined';
 import CloseIcon from '@mui/icons-material/Close';
 import SkipNextRoundedIcon from '@mui/icons-material/SkipNextRounded';
 import { useAnimationFrame } from "./useAnimationFrame";
+import { Page } from "../knotPageTemplate";
 
-type UseKnotControls = (description: JSX.Element) => {
+type UseKnotControls = (title: string, description: JSX.Element) => {
     frame: number,
     drawer: JSX.Element
     controls: JSX.Element
 }
 
-export const useKnotControls: UseKnotControls = (description) => {
+export const useKnotControls: UseKnotControls = (title, description) => {
     const [animationSlider, setAnimationSlider] = useState(100)
     const [drawOpen, setDrawOpen] = React.useState(false)
     const [play, setPlay] = useState(false)
@@ -46,12 +47,27 @@ export const useKnotControls: UseKnotControls = (description) => {
                 onClose={() => setDrawOpen(false)}
             >
                 <Box
-                    sx={{ height: '100vh', padding: '10px' }}
+                    sx={{ height: '75vh', padding: '10px', paddingTop: '50px'  }}
                 >
-                    <IconButton aria-label="close" onClick={() => setDrawOpen(false)} sx={{ float: 'right' }}>
-                        <CloseIcon />
-                    </IconButton>
-                    {description}
+                    <Paper elevation={3} square style={{ 
+                        display: 'flex', 
+                        justifyContent:'space-between',
+                        alignItems:'center',
+                        position: "fixed",
+                        marginLeft: '-10px', 
+                        marginTop: '-50px', 
+                        padding: '10px', 
+                        width: '100%', 
+                        backgroundColor: '#fff'}}  >
+                        
+                        <Typography variant="h6" component="h5">{title}</Typography>
+                        <IconButton aria-label="close" onClick={() => setDrawOpen(false)}>
+                            <CloseIcon />
+                        </IconButton>
+                    </Paper>
+                    <Page>
+                        {description}
+                    </Page>
                 </Box>
             </Drawer>
         ),

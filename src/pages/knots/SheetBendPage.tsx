@@ -10,8 +10,6 @@ export const SheetBendPage: React.FC = () => (
         title='Sheet Bend'
         description={(
             <>
-            <Typography variant="h6" component="h5" gutterBottom>Sheet bend</Typography>
-
             <PaperP>
                 <Typography variant="subtitle2" component="h6" gutterBottom>How to tie a sheet bend</Typography>
                 <Typography variant="body1" component="p" gutterBottom>

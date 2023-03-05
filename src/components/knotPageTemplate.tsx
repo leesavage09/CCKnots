@@ -3,7 +3,9 @@ import { KnotScene } from "./knotScene";
 import { useKnotControls } from "./hooks/useKnotControls";
 import { AnimatedKnotProps } from "./threejs/hooks/useRopeAnimation";
 import { AppBar } from "./appBar";
-import { Paper } from "@mui/material";
+import { Container, Paper } from "@mui/material";
+
+export const Page: React.FC<React.PropsWithChildren> = ({ children }) => <Container sx={{ paddingBottom: 8 }}>{children}</Container>
 
 export const PaperP: React.FC<React.PropsWithChildren> = ({ children }) => <Paper sx={{ marginX: 1, marginY: 3, padding: 2 }}>{children}</Paper>
 
@@ -15,7 +17,7 @@ interface KnotPageProps {
 }
 
 export const KnotPage: React.FC<KnotPageProps> = ({ knot, title, description, cameraPos }) => {
-    const { frame, controls, drawer } = useKnotControls(description)
+    const { frame, controls, drawer } = useKnotControls(title, description)
     const [canvas, setCanvas] = useState<JSX.Element>()
 
     // Fix for a possible race condition in threejs fiber

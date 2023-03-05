@@ -10,8 +10,6 @@ export const RollingHitchPage: React.FC = () => (
         title='Rolling Hitch'
         description={(
             <>
-            <Typography variant="h6" component="h5" gutterBottom>Rolling hitch</Typography>
-
             <PaperP>
                 <Typography variant="subtitle2" component="h6" gutterBottom>How to tie a rolling hitch</Typography>
                 <Typography variant="body1" component="p" gutterBottom>

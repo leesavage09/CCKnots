@@ -10,8 +10,6 @@ export const RoundTurnPage: React.FC = () => (
         title='Round Turn'
         description={(
             <>
-            <Typography variant="h6" component="h5" gutterBottom>Round turn and two half hitches</Typography>
-
             <PaperP>
                 <Typography variant="subtitle2" component="h6" gutterBottom>How to tie a round turn and two half hitches</Typography>
                 <Typography variant="body1" component="p" gutterBottom>

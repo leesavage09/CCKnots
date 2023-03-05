@@ -10,8 +10,6 @@ export const CloveHitchPage: React.FC = () => (
         title='Clove Hitch'
         description={(
             <>
-                <Typography variant="h6" component="h5" gutterBottom>Clove Hitch</Typography>
-
                 <PaperP>
                     <Typography variant="subtitle2" component="h6" gutterBottom>How to tie a clove hitch</Typography>
                     <Typography variant="body1" component="p" gutterBottom>

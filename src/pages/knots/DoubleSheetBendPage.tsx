@@ -10,8 +10,6 @@ export const DoubleSheetBendPage: React.FC = () => (
         title='Double Sheet Bend'
         description={(
             <>
-            <Typography variant="h6" component="h5" gutterBottom>Double sheet bend</Typography>
-
             <PaperP>
                 <Typography variant="subtitle2" component="h6" gutterBottom>How to tie a double sheet bend</Typography>
                 <Typography variant="body1" component="p" gutterBottom>
