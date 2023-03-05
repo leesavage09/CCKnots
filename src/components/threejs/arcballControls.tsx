@@ -12,7 +12,7 @@ export const ArcballControl = () => {
             const controls = new ArcballControls(camera, gl.domElement);
 
             controls.minDistance = 10;
-            controls.maxDistance = 70;
+            controls.maxDistance = 130;
 
             return () => {
                 controls.dispose();

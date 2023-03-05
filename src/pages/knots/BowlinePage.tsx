@@ -7,12 +7,10 @@ export const BowlinePage: React.FC = () => {
     return (
         <KnotPage
             knot={Bowline}
-            cameraPos={[0, 0, 70]}
+            cameraPos={[0, 0, 130]}
             title='Bowline'
             description={(
                 <>
-                    <Typography variant="h6" component="h5" gutterBottom>Bowline</Typography>
-
                     <PaperP>
                         <Typography variant="subtitle2" component="h6" gutterBottom>How to tie a bowline</Typography>
                         <Typography variant="body1" component="p" gutterBottom>
