@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useHistory } from "react-router";
 import { Box, Button, Container, Drawer, IconButton, Paper, Slider, Stack, Typography } from "@mui/material";
 import SkipPreviousRoundedIcon from '@mui/icons-material/SkipPreviousRounded';
@@ -22,6 +22,7 @@ export const useKnotControls: UseKnotControls = (title, description) => {
     const [play, setPlay] = useState(false)
     useAnimationFrame((deltaTime: number) => setAnimationSlider(value => (value + deltaTime * 0.015)), play)
     const history = useHistory()
+    const [step, setStep] = useState(100) 
 
     const handleRW = ()=>{
         setAnimationSlider(0)
@@ -37,6 +38,17 @@ export const useKnotControls: UseKnotControls = (title, description) => {
         setPlay(false)
         setAnimationSlider(100)
     }
+
+    useEffect(() => {
+        if (animationSlider>=100) setPlay(false)
+    }, [animationSlider])
+
+    useEffect(() => {
+        if (Math.abs(step-animationSlider)>1) {
+            setStep(animationSlider)
+        }
+    }, [animationSlider])
+    
 
     return {
         frame: animationSlider / 100,
@@ -86,13 +98,13 @@ export const useKnotControls: UseKnotControls = (title, description) => {
                 }}
             >
                 <Slider
-                    key={play ? Math.random() : 1}
+                    key={1}
                     sx={{ width: '90vw', display: 'flex', flexShrink: 1, marginBottom: 2 }}
                     aria-label="Animation"
                     step={0.001}
                     min={0}
                     max={100}
-                    value={animationSlider}
+                    value={step}
                     onChange={(_, value) => setAnimationSlider(value as number)}
                 />
                 <Box
