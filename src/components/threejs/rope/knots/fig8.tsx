@@ -2,7 +2,7 @@ import React from 'react'
 import { fig8Curve } from './curves/fig8'
 import { AnimatedKnotProps, useRopeAnimation } from '../../hooks/useRopeAnimation'
 import { Vector2 } from 'three'
-import { blueTexture, useRopeMaterial } from '../../hooks/useRopeMaterial'
+import { useRopeMaterial, whiteTexture } from '../../hooks/useRopeMaterial'
 import { Rope } from '../rope'
 
 export const fig8: React.FC<AnimatedKnotProps> = ({ frame }) => {
@@ -28,7 +28,7 @@ export const fig8: React.FC<AnimatedKnotProps> = ({ frame }) => {
                     length: 90,
                     radialSegments: 32,
                     heightSegments: 400,
-                    material: useRopeMaterial(new Vector2(2, 100), blueTexture),
+                    material: useRopeMaterial(new Vector2(2, 100), whiteTexture),
                 }}
             />
         </>
