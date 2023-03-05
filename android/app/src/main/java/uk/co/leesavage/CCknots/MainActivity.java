@@ -1,4 +1,4 @@
-package uk.co.leesavage.sailingknots3d;
+package uk.co.leesavage.CCknots;
 
 import com.getcapacitor.BridgeActivity;
 

@@ -2,6 +2,6 @@
 <resources>
     <string name="app_name">sailingknots3d</string>
     <string name="title_activity_main">sailingknots3d</string>
-    <string name="package_name">uk.co.leesavage.sailingknots3d</string>
-    <string name="custom_url_scheme">uk.co.leesavage.sailingknots3d</string>
+    <string name="package_name">uk.co.leesavage.CCknots</string>
+    <string name="custom_url_scheme">uk.co.leesavage.CCknots</string>
 </resources>
