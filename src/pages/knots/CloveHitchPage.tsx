@@ -33,10 +33,10 @@ export const CloveHitchPage: React.FC = () => (
                     <Typography variant="subtitle2" component="h6" gutterBottom>How to tie a clove hitch 2</Typography>
                     <Typography variant="body1" component="p" gutterBottom>
                         <ul>
-                            <li>Lay the rope over the bar you wish to tie the clove hitch on.</li>
-                            <li>Bring the working end around the bar and let it cross over the standing end of the rope.</li>
-                            <li>Bring the working end around the bar one more time, keeping it on the same side of the standing end of the rope. </li>
-                            <li>Pass the working end underneath the hitch on the bar, parallel to the standing end.</li>
+                            <li>Lay the rope over the object you wish to tie the clove hitch on.</li>
+                            <li>Bring the working end around the object and let it cross over the standing end of the rope.</li>
+                            <li>Bring the working end around the object one more time, keeping it on the same side of the standing end of the rope. </li>
+                            <li>Pass the working end underneath the hitch on the object, parallel to the standing end.</li>
                             <li>To tighten the knot, pull the standing end and working end away from each other.</li>
                         </ul>
                     </Typography>

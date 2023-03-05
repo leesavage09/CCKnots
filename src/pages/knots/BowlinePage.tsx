@@ -40,7 +40,7 @@ export const BowlinePage: React.FC = () => {
                     <PaperP>
                         <Typography variant="subtitle2" component="h6" gutterBottom>Misuse in sailing</Typography>
                         <Typography variant="body1" component="p" gutterBottom>
-                            Bowlines are often used to make a long line out of two shorter lines, by tying two bowlines at the end of both lines that loop through each other. Although this is a strong way of tying ropes together, there’s also a lot of friction. The friction can damage your lines and make them less strong over time. That for, the sheet bend is a much better knot for tying lines and ropes together. 
+                            Bowlines are often used to make a long line out of two shorter lines, by tying two bowlines at the end of both lines that loop through each other. Although this is a strong way of tying ropes together, there’s also a lot of friction. The friction can damage your lines and make them less strong over time. There for, the sheet bend is a much better knot for tying lines and ropes together. 
                         </Typography>
                     </PaperP>
 
