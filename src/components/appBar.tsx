@@ -13,7 +13,7 @@ export const AppBar = ({title = 'Sailing Knots 3D'}) => {
   return (
     <>
       <Box>
-        <MuiAppBar position="static">
+        <MuiAppBar elevation={3} >
           <Toolbar>
             <IconButton
               size="large"

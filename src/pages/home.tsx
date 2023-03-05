@@ -11,6 +11,7 @@ export const Home = () => {
     const knotCards = knots.map((knot) => (
         <ListItem 
             key={knot.name}
+            sx={{marginY:1}}
             onClick={() => {
                 history.push(knot.url);
             }}
@@ -28,7 +29,7 @@ export const Home = () => {
             <AppBar />
             <IonSlide>
                 <IonContent>
-                    <Container maxWidth="xs">
+                    <Container sx={{marginTop: 8}}maxWidth="xs">
                         <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
                             {knotCards} 
                         </List>
