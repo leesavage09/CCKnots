@@ -64,13 +64,7 @@ export const Menu: React.FC<MenuProps> = ({ open, onClose }) => {
 
                 <Divider />
 
-                <List
-                    subheader={
-                        <ListSubheader component="div" id="nested-list-subheader">
-                            Knots
-                        </ListSubheader>
-                    }
-                >
+                <List>
                     {listOfKnots}
                 </List>
             </Box>
