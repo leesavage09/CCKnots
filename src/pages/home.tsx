@@ -1,5 +1,5 @@
 import { IonContent, IonSlide } from '@ionic/react'
-import { Container, Stack, Typography } from '@mui/material'
+import { Avatar, Container, List, ListItem, ListItemAvatar, ListItemText, Stack, Typography } from '@mui/material'
 import { useHistory } from 'react-router'
 import { AppBar } from '../components/appBar'
 import { KnotCard } from '../components/knotCard'
@@ -7,17 +7,20 @@ import { knots } from '../knots'
 
 export const Home = () => {
     const history = useHistory()
-
+ 
     const knotCards = knots.map((knot) => (
-        <KnotCard
+        <ListItem 
             key={knot.name}
-            image={knot.image}
-            title={knot.name}
-            body={knot.description}
-            action={() => {
+            onClick={() => {
                 history.push(knot.url);
             }}
-        />
+        >
+
+            <ListItemAvatar>
+            <Avatar sx={{ width: 100, height: 100, marginRight: 3 }} alt={knot.name} src={knot.image}/>
+            </ListItemAvatar>
+            <ListItemText primary={knot.name} secondary={knot.description} />
+        </ListItem>
     ))
 
     return (
@@ -25,13 +28,10 @@ export const Home = () => {
             <AppBar />
             <IonSlide>
                 <IonContent>
-                    <Typography variant="h4" component="h2" gutterBottom>
-                        Knots
-                    </Typography>
                     <Container maxWidth="xs">
-                        <Stack spacing={4}>
-                            {knotCards}
-                        </Stack>
+                        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+                            {knotCards} 
+                        </List>
                         <div style={{ height: 100 }} />
                     </Container>
                 </IonContent>
