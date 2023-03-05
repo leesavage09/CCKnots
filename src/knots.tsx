@@ -7,7 +7,15 @@ import { RollingHitchPage } from "./pages/knots/RollingHitchPage";
 import { RoundTurnPage } from "./pages/knots/RoundTurnPage";
 import { SheetBendPage } from "./pages/knots/SheetBendPage";
 
-export const knots = [
+export type KnotDef = {
+    name: string;
+    url: string;
+    image: string;
+    description: string;
+    pageComponent: JSX.Element;
+}
+
+export const knots: KnotDef[] = [
     {
         name: 'Clove Hitch',
         url: '/knots/cloveHitch',

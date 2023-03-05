@@ -1,42 +1,26 @@
-import { IonContent, IonSlide } from '@ionic/react'
-import { Avatar, Container, List, ListItem, ListItemAvatar, ListItemText, Stack, Typography } from '@mui/material'
-import { useHistory } from 'react-router'
-import { AppBar } from '../components/appBar'
-import { KnotCard } from '../components/knotCard'
-import { knots } from '../knots'
+import { IonContent, IonSlide } from "@ionic/react";
+import { Container, List } from "@mui/material";
+import { AppBar } from "../components/appBar";
+import { KnotListItem } from "../components/knotListItem";
+import { knots } from "../knots";
 
 export const Home = () => {
-    const history = useHistory()
- 
-    const knotCards = knots.map((knot) => (
-        <ListItem 
-            key={knot.name}
-            sx={{marginY:1}}
-            onClick={() => {
-                history.push(knot.url);
-            }}
-        >
+  const knotCards = knots.map((knot) => <KnotListItem knot={knot} large={true} />);
 
-            <ListItemAvatar>
-            <Avatar sx={{ width: 100, height: 100, marginRight: 3 }} alt={knot.name} src={knot.image}/>
-            </ListItemAvatar>
-            <ListItemText primary={knot.name} secondary={knot.description} />
-        </ListItem>
-    ))
-
-    return (
-        <>
-            <AppBar />
-            <IonSlide>
-                <IonContent>
-                    <Container sx={{marginTop: 8}}maxWidth="xs">
-                        <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-                            {knotCards} 
-                        </List>
-                        <div style={{ height: 100 }} />
-                    </Container>
-                </IonContent>
-            </IonSlide>
-        </>
-    )
-}
+  return (
+    <>
+      <AppBar />
+      <IonSlide>
+        <IonContent>
+          <Container sx={{ marginTop: 8, marginBottom: 6 }} maxWidth="xs">
+            <List
+              sx={{ width: "100%", maxWidth: 360, bgcolor: "background.paper" }}
+            >
+              {knotCards}
+            </List>
+          </Container>
+        </IonContent>
+      </IonSlide>
+    </>
+  );
+};
