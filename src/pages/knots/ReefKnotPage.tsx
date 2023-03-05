@@ -29,7 +29,7 @@ export const ReefKnotPage: React.FC = () => {
                     <PaperP>
                         <Typography variant="subtitle2" component="h6" gutterBottom>Usage In Sailing</Typography>
                         <Typography variant="body1" component="p" gutterBottom>
-                            In sailing the reef knot is mainly used for reefing and furling sails. Furthermore, it can be used to secure a rope or line around an object. 
+                            Historically the reef knot was mainly used for reefing and furling sails. Nowadays, the reef knot is mainly used to tie down a deck brush or a boat hook or to secure a dinghy on deck.
                         </Typography>
                     </PaperP>
 

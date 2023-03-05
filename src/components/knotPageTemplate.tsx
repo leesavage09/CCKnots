@@ -7,7 +7,7 @@ import { Container, Paper } from "@mui/material";
 
 export const Page: React.FC<React.PropsWithChildren> = ({ children }) => <Container sx={{ paddingBottom: 8 }}>{children}</Container>
 
-export const PaperP: React.FC<React.PropsWithChildren> = ({ children }) => <Paper sx={{ marginX: 1, marginY: 3, padding: 2 }}>{children}</Paper>
+export const PaperP: React.FC<React.PropsWithChildren> = ({ children }) => <Paper sx={{ marginX: 1, marginTop: 3, marginBottom: 6, padding: 2 }}>{children}</Paper>
 
 interface KnotPageProps {
     knot: React.FC<AnimatedKnotProps>,
