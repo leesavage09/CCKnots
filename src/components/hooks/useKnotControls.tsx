@@ -22,6 +22,21 @@ export const useKnotControls: UseKnotControls = (description) => {
     useAnimationFrame((deltaTime: number) => setAnimationSlider(value => (value + deltaTime * 0.015)), play)
     const history = useHistory()
 
+    const handleRW = ()=>{
+        setAnimationSlider(0)
+        setPlay(true)
+    }
+
+    const handlePlay = ()=>{
+        if (animationSlider>=100) setAnimationSlider(0)
+        setPlay(!play)
+    }
+
+    const handleFF = ()=>{
+        setPlay(false)
+        setAnimationSlider(100)
+    }
+
     return {
         frame: animationSlider / 100,
         drawer: (
@@ -77,14 +92,14 @@ export const useKnotControls: UseKnotControls = (description) => {
                             variant="contained"
                             disabled={animationSlider === 0}
                             sx={{ borderRadius: 10 }}
-                            onClick={() => setAnimationSlider(0)}
+                            onClick={handleRW}
                         >
                             <SkipPreviousRoundedIcon />
                         </Button>
                         <Button
                             variant="contained"
                             sx={{ borderRadius: 10 }}
-                            onClick={() => setPlay(!play)}
+                            onClick={handlePlay}
                         >
                             {play ? <PauseRoundedIcon /> : <PlayArrowRoundedIcon />}
                         </Button>
@@ -92,10 +107,7 @@ export const useKnotControls: UseKnotControls = (description) => {
                             variant="contained"
                             disabled={animationSlider === 100}
                             sx={{ borderRadius: 10 }}
-                            onClick={() => {
-                                setPlay(false)
-                                setAnimationSlider(100)}
-                            }
+                            onClick={handleFF}
                         >
                             <SkipNextRoundedIcon />
                         </Button>
