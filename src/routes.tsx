@@ -3,11 +3,10 @@ import { useIonRouter } from "@ionic/react";
 import { Home } from "./pages/home";
 import { knots } from "./knots";
 import { useBackButton } from "./components/hooks/useBackButton";
-import { usePro } from "./components/hooks/usePro";
+import { AppProvider } from "./components/context/appContext";
 
 export const Routes: React.FC = () => {
   const ionRouter = useIonRouter();
-  const pro = usePro();
   useBackButton();
 
   const knotRoutes = knots.map((knot) => (
@@ -17,14 +16,14 @@ export const Routes: React.FC = () => {
   ));
 
   return (
-    <>
+    <AppProvider>
       <Route exact path="/home">
-        <Home pro={pro} />
+        <Home />
       </Route>
       <Route exact path="/">
         <Redirect to="/home" />
       </Route>
       {knotRoutes}
-    </>
+    </AppProvider>
   );
 };
