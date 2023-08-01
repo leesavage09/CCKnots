@@ -15,6 +15,9 @@ export const DonationBanner = () => {
         <Typography variant="body1" component="p" gutterBottom>
           Your donation is processing!
         </Typography>
+        <IonButton onClick={() => donation.check()}>
+          Check payment status
+        </IonButton>
       </PaperP>
     );
 
@@ -40,7 +43,7 @@ export const DonationBanner = () => {
           I would like to keep this app add free. If you are enjoying this app,
           please consider a review or a donation.
         </Typography>
-        <IonButton onClick={() => donation.donate()}>
+        <IonButton onClick={() => donation.donate()} disabled={donation.ordering}>
           Donate {donation.productPrice}
         </IonButton>
         <IonButton
@@ -56,6 +59,9 @@ export const DonationBanner = () => {
         >
           Review
         </IonButton>
+        {/* <IonButton onClick={() => donation.check()}>
+          Check payment status
+        </IonButton> */}
       </PaperP>
     );
   else return <></>;

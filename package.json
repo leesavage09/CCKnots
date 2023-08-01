@@ -8,8 +8,8 @@
     "build": "react-scripts build",
     "test": "react-scripts test --transformIgnorePatterns 'node_modules/(?!(@ionic/react|@ionic/react-router|@ionic/core|@stencil/core|ionicons)/)'",
     "eject": "react-scripts eject",
-    "ionic-test": "npx cap run android",
-    "ionic-build": "ionic capacitor build android"
+    "cap-dev": "ionic cap run android -l --external",
+    "cap-build": "ionic capacitor build android"
   },
   "dependencies": {
     "@capacitor/android": "^5.0.0",
@@ -21,13 +21,12 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@fontsource/roboto": "^4.5.8",
-    "@ionic-native/in-app-purchase-2": "^5.36.0",
     "@ionic/react": "^6.0.0",
     "@ionic/react-router": "^6.0.0",
     "@mui/icons-material": "^5.14.1",
     "@mui/material": "^5.14.2",
     "@react-three/fiber": "^8.8.3",
-    "cordova-plugin-purchase": "^11.0.0",
+    "cordova-plugin-purchase": "^13.6.0",
     "http-server": "^14.1.1",
     "ionicons": "^6.0.3",
     "react": "^18.2.0",
@@ -36,6 +35,7 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "^5.0.0",
     "three": "^0.144.0",
+    "timers-browserify": "^2.0.12",
     "workbox-background-sync": "^5.1.4",
     "workbox-broadcast-update": "^5.1.4",
     "workbox-cacheable-response": "^5.1.4",

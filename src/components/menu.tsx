@@ -18,13 +18,12 @@ interface MenuProps {
 
 export const Menu: React.FC<MenuProps> = ({ open, onClose }) => {
   const history = useHistory();
-  const knotCards = knots.map((knot) => (
-    <KnotListItem knot={knot} />
-  ));
+  const knotCards = knots.map((knot) => <KnotListItem knot={knot} />);
 
   return (
     <Drawer anchor="left" open={open} onClose={onClose}>
       <Box
+        component="div"
         sx={{ width: 250 }}
         role="presentation"
         onClick={onClose}

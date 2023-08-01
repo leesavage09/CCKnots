@@ -12,7 +12,7 @@ export const AppBar = ({title = 'Sailing Knots 3D'}) => {
 
   return (
     <>
-      <Box>
+      <Box component="div">
         <MuiAppBar elevation={3} >
           <Toolbar>
             <IconButton
