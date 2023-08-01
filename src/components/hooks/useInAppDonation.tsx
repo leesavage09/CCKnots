@@ -1,24 +1,25 @@
 import { isPlatform } from "@ionic/react";
 import { useState, useEffect, useCallback } from "react";
 import "cordova-plugin-purchase";
-import { setTimeout } from "timers";
+import { setInterval, clearInterval } from "timers-browserify";
 
 export const useInAppDonation = () => {
-  const [productPrice, setPrice] = useState("");
-  const [donated, setDonated] = useState(false);
-  const [processingConfirmed, setProcessingConfirmed] = useState(false);
-  const [processing, setProcessing] = useState(false);
-  const [ordering, setOrdering] = useState(false);
+  const [price, setPrice] = useState("");
+  const [owned, setOwned] = useState(false);
+  const [orderDialogOpen, setOrderDialogOpen] = useState(false);
+  const [isOrdering, setIsOrdering] = useState(false);
+  const [hasOrder, setHasOrder] = useState(false);
 
   const donateProduct = {
     id: "000donate",
     type: CdvPurchase.ProductType.NON_CONSUMABLE,
     platform: CdvPurchase.Platform.GOOGLE_PLAY,
   };
+
   const checkOwned = useCallback((transaction: CdvPurchase.Transaction) => {
     if (CdvPurchase.store.owned("000donate") && transaction.purchaseId) {
-      setDonated(true);
-      setProcessing(false);
+      setOwned(true);
+      setHasOrder(false);
       transaction.finish();
 
       // For testing consume any found purchases
@@ -36,15 +37,12 @@ export const useInAppDonation = () => {
   }, []);
 
   const checkIfOrderInProgress = useCallback((receipt: CdvPurchase.Receipt) => {
-    console.log("receiptUpdated");
-    receipt.transactions.map((transaction) => {
-      transaction.products.map((product) => {
+    receipt.transactions.forEach((transaction) => {
+      transaction.products.forEach((product) => {
         if (product.id === "000donate" && transaction.isPending) {
-          setProcessing(true);
-          setProcessingConfirmed(true);
-          CdvPurchase.store.monitor(transaction, (state) => {
-            console.log("new transaction state: " + state);
-          });
+          console.log("000donate: transaction.isPending");
+          setHasOrder(true);
+          setIsOrdering(true);
         }
       });
     });
@@ -58,7 +56,6 @@ export const useInAppDonation = () => {
   useEffect(() => {
     const init = async () => {
       if (isPlatform("ios") || isPlatform("android")) {
-        console.log("init");
         CdvPurchase.store.register([donateProduct]);
         CdvPurchase.store.ready(updatePrice);
         CdvPurchase.store.when().receiptUpdated(checkIfOrderInProgress);
@@ -69,45 +66,44 @@ export const useInAppDonation = () => {
 
     document.addEventListener("deviceready", init);
     return () => {
-      console.log("cleanup");
       CdvPurchase.store.off(updatePrice);
       CdvPurchase.store.off(checkIfOrderInProgress);
       CdvPurchase.store.off(checkOwned);
-      setProcessing(false);
-      setDonated(false);
+      setHasOrder(false);
+      setOwned(false);
       setPrice("");
       document.removeEventListener("deviceready", init);
     };
   }, []);
 
-  const donate = async () => {
+  const order = async () => {
     const offer = CdvPurchase.store.get("000donate")?.getOffer();
     if (offer?.canPurchase) {
-      setOrdering(true);
-      const order = await offer.order();
-      console.log("order", { order });
-      setOrdering(false);
-      check();
+      setOrderDialogOpen(true);
+      await offer.order();
+      setOrderDialogOpen(false);
     }
   };
 
-  const check = async () => {
-    setProcessing(false);
-    // This will trigger receiptUpdated but only if there is a transaction in progress
-    await CdvPurchase.store
-      .getAdapter(CdvPurchase.Platform.GOOGLE_PLAY)
-      ?.loadReceipts();
-    // if processing is still false then confirm that processing is over
-    if (!processing) setProcessingConfirmed(false);
-    else setTimeout(check, 1000);
-  };
+  useEffect(() => {
+    if (!isOrdering) return;
+
+    const timer = setInterval(async () => {
+      setHasOrder(false);
+      await CdvPurchase.store
+        .getAdapter(CdvPurchase.Platform.GOOGLE_PLAY)
+        ?.loadReceipts();
+      if (!hasOrder) setIsOrdering(false);
+    }, 5000);
+
+    return () => clearInterval(timer);
+  }, [hasOrder, isOrdering]);
 
   return {
-    productPrice,
-    donated,
-    donate,
-    processing: processingConfirmed,
-    ordering,
-    check,
+    price,
+    owned,
+    order,
+    isOrdering,
+    orderDialogOpen,
   };
 };

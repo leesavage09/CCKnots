@@ -6,34 +6,28 @@ import { useInAppDonation } from "./hooks/useInAppDonation";
 export const DonationBanner = () => {
   const donation = useInAppDonation();
 
-  if (donation.processing)
+  if (donation.isOrdering)
+    return (
+      <PaperP>
+        <Typography variant="body1" component="p" gutterBottom>
+          Your order is processing!
+        </Typography>
+      </PaperP>
+    );
+
+  if (donation.owned)
     return (
       <PaperP>
         <Typography variant="subtitle2" component="h6" gutterBottom>
           Thank you
         </Typography>
         <Typography variant="body1" component="p" gutterBottom>
-          Your donation is processing!
-        </Typography>
-        <IonButton onClick={() => donation.check()}>
-          Check payment status
-        </IonButton>
-      </PaperP>
-    );
-
-  if (donation.donated)
-    return (
-      <PaperP>
-        <Typography variant="subtitle2" component="h6" gutterBottom>
-          Thank you
-        </Typography>
-        <Typography variant="body1" component="p" gutterBottom>
-          Thank you for donating!
+          You now have Sailing Knots 3D Pro!
         </Typography>
       </PaperP>
     );
 
-  if (donation.productPrice)
+  if (donation.price)
     return (
       <PaperP>
         <Typography variant="subtitle2" component="h6" gutterBottom>
@@ -43,8 +37,8 @@ export const DonationBanner = () => {
           I would like to keep this app add free. If you are enjoying this app,
           please consider a review or a donation.
         </Typography>
-        <IonButton onClick={() => donation.donate()} disabled={donation.ordering}>
-          Donate {donation.productPrice}
+        <IonButton onClick={() => donation.order()} disabled={donation.isOrdering}>
+          Donate {donation.price}
         </IonButton>
         <IonButton
           color="secondary"
@@ -59,9 +53,6 @@ export const DonationBanner = () => {
         >
           Review
         </IonButton>
-        {/* <IonButton onClick={() => donation.check()}>
-          Check payment status
-        </IonButton> */}
       </PaperP>
     );
   else return <></>;
