@@ -3,7 +3,15 @@ import { useState, useEffect } from "react";
 import "cordova-plugin-purchase";
 import { setInterval, clearInterval } from "timers-browserify";
 
-export const usePro = () => {
+export interface Pro {
+  price: string;
+  owned: boolean;
+  order: () => Promise<void>;
+  isOrdering: boolean;
+  orderDialogOpen: boolean;
+}
+
+export const usePro = ():Pro => {
   const [price, setPrice] = useState("");
   const [owned, setOwned] = useState(false);
   const [orderDialogOpen, setOrderDialogOpen] = useState(false);
